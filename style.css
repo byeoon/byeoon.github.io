@@ -20,9 +20,10 @@ h1, h2, h3, h4 {
 
 a {
   color: #c7c8ff;
+  text-decoration: none;
 }
 a:hover {
-  color: #313d5f
+  color: #7678e6
 }
 
 h4 { 
@@ -33,14 +34,20 @@ h4 {
   text-align: center;
 }
 
+.flexboxing { 
+  display: flex;
+  justify-content:center;
+  gap: 20px;
+}
+
 .coolcontainer {
-  border: 1px solid #31266d;
+  border: 1px solid #6c5dc2;
   box-shadow: 0 0 12px 5px #151433;
   background-color:rgb(7, 7, 10);
   width: 350px;
   height:auto;
   padding: 20px;
-  border-radius: 10px;;
+  border-radius: 10px;
 }
 
 .wrap {
