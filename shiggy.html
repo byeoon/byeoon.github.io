@@ -9,23 +9,19 @@
     <meta name="description" content="shiggie wiggie" property="og:description">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta content="#3d329b" data-react-helmet="true" name="theme-color" />
-    <meta content="https://byeoon.github.io/byeoon-dev/shig.gif" property="og:image" />
+    <meta content="https://byeoon.github.io/shig.gif" property="og:image" />
     <link rel="stylesheet" href="style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"
         integrity="sha512-Kef5sc7gfTacR7TZKelcrRs15ipf7+t+n7Zh6mKNJbmW+/RRdCW9nwfLn4YX0s2nO6Kv5Y2ChqgIakaC6PW09A=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
-        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-
 </head>
 <div id="particles-js"></div>
 <br>
 <center> <div class="coolcontainer">
-        <img src="https://avatars.githubusercontent.com/u/47872200?v=4" style="border-radius: 50%; vertical-align: middle;" width="64px"
-            height="64px">
-        <span style="vertical-align:middle; text-shadow: 1px 2px 4px #0a0046, 0 0 1em #1b00b4, 0 0 1.2em #3c3877; padding: 12px;"> byeoon.dev </span>
-        <h4 class="roboto-regular" style="margin: 12px"> <a href="https://byeoon.github.io/byeoon-dev/">about</a> | <a href="https://byeoon.github.io/byeoon-dev/portfolio">portfolio</a> | <a href="https://byeoon.dev">lorem</a> | <a href="https://byeoon.dev">ipsum</a> | <a href="https://byeoon.github.io/byeoon-dev/credits">credits</a></h4>
+  <img src="https://avatars.githubusercontent.com/u/47872200?v=4" style="border-radius: 50%; vertical-align: middle;" width="64px" height="64px">
+  <span style="vertical-align:middle; text-shadow: 1px 2px 4px #0a0046, 0 0 1.5em #1b00b4, 0 0 1.2em #3c3877; padding: 12px;"> byeoon.dev </span>
+  <h4 class="roboto-regular" style="margin: 12px"> <a href="https://byeoon.github.io/">about</a> | <a href="/portfolio.html">portfolio</a> | <a href="/credits.html">credits</a></h4>
 </div>
 <br>
 <div class="coolcontainer">
@@ -55,7 +51,6 @@ Your browser does not support the audio element. sad cat....
 
 <script>
     particlesJS.load('particles-js', 'particlesjs-config.json', function () {
-        console.log('callback - particles-js config loaded');
     });
 
     function playaudio() {
@@ -63,7 +58,7 @@ Your browser does not support the audio element. sad cat....
     }
 
   $(document).ready(function(){
-  setTimeout(playaudio,50);
+  setTimeout(playaudio,1000);
 })
 </script>
 
