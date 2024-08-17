@@ -41,8 +41,8 @@ h4 {
 }
 
 .coolcontainer {
-  border: 1px solid #6c5dc2;
-  box-shadow: 0 0 12px 5px #151433;
+  border: 1px solid #a5abff;
+  box-shadow: 0 0 12px 5px #323247;
   background-color:rgb(7, 7, 10);
   width: 350px;
   height:auto;
@@ -65,7 +65,7 @@ h4 {
  
 body { 
   background-color: rgb(25, 25, 43);
-  background-image: url("bg.png");
+  background-image: url("img/bg.png");
   background-position: center;
   background-blend-mode: overlay;
   position: sticky;
