@@ -24,8 +24,7 @@ a {
 }
 a:hover {
   color: #7678e6;
-  filter: blur(2px);
-  
+  filter: drop-shadow(0 0px 4px #4e5097);
 }
 
 h4 { 
