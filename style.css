@@ -2,6 +2,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=VT323');
 
+body {
+  margin: 0;
+  padding: 0;
+  overflow: auto;
+}
+
 #particles-js {
   position: fixed;
   left: 0;
@@ -30,8 +36,14 @@ h4 {
   color: white;
 }
 
-.container {
-  text-align: center;
+.main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: auto;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .flexboxing { 
@@ -40,14 +52,17 @@ h4 {
   gap: 20px;
 }
 
+
 .coolcontainer {
   border: 1px solid #a5abff;
   box-shadow: 0 0 12px 5px #1d1d31;
   background-color:rgb(15, 15, 30);
   width: 350px;
-  height:auto;
+
   padding: 20px;
   border-radius: 10px;
+  align-self: center;  
+  align-content: center; 
 }
 
 .wrap {
