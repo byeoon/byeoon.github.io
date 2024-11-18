@@ -73,6 +73,14 @@ h4 {
   padding-left: 25px;
 }
  
+.gradientbyeoon {
+  background: linear-gradient(to right, #9184ff, #1a0381);
+  color: transparent;
+  background-clip: text;
+  display: inline-block;
+  font-weight: bold;
+}
+
 body { 
   background-color: rgb(32, 32, 53);
   background-image: url("img/bg2.png");
