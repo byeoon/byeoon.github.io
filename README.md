@@ -1,2 +1,2 @@
-# byeoon-dev
-website for whenever i get byeoon.dev (please donate to me)
+# byeoon's website
+welcome to my website!
