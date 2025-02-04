@@ -44,7 +44,7 @@
   width: 200px;
   height: 200px;
   background: red;
-  clip-path: polygon(53% 20%, 92% 20%, 96% 26%, 100% 38%, 5% 38%, 4% 29%, 0 20%);
+  
 }
 
 .fortheloveofgodstopmakingitbold {
@@ -105,14 +105,35 @@ a:hover {
   border: 2px solid #5dafb1;
   background-color:rgba(20, 17, 25, 0.8);
   color: white;
-  width: 350px;
-  position: absolute;
-  bottom:0;
-  left: 1px;
+  width: 250px;
+  position:relative;
+  right: 400px;
+  bottom: 300px;
   padding: 10px;
   border-radius: 10px;
   align-self: left;  
+  transform: rotate(-5deg); /* Equal to rotateZ(45deg) */
   align-content: left; 
+}
+
+#notavailable {
+  border: 2px solid #ff4b4b;
+  background-color:rgba(78, 12, 12, 0.8);
+}
+
+.rect {
+  height: 100px;
+  width: 100px;
+  outline:1px solid #5dafb1;
+  overflow-wrap: break-word;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.statscontainer:hover {
+  border: 3px solid #5dafb1;
+  background-color:rgba(45, 44, 65, 0.899);
+  box-shadow: 0 0 12px 8px #373774;
 }
 
 .wrap {
