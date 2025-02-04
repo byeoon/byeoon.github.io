@@ -14,6 +14,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"
     integrity="sha512-Kef5sc7gfTacR7TZKelcrRs15ipf7+t+n7Zh6mKNJbmW+/RRdCW9nwfLn4YX0s2nO6Kv5Y2ChqgIakaC6PW09A=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/npm/moment-timezone@0.5.47/builds/moment-timezone-with-data.min.js"></script>
 </head>
 
 
@@ -21,16 +22,29 @@
     <div id="particles-js"></div>
     <div class="main">
       <div class="coolcontainer">
-        <h1>hi</h1>
+        <p class="p2">SCAN RESULTS</p>
+        <h2 class="results">BYEOON</h2>
+        <p class="p2">AFFILIATION</p>
+        <h2 class="affiliation">NONE</h2>
+        <p class="p2">ABILITIES</p>
+        <img src="img/CyberNew.png" style="vertical-align:middle" width="32px" height="32px"> <p2 class="abilitylist">CYBERSECURITY</p2> <br>
+        <img src="img/Gun.png" style="vertical-align:middle" width="32px" height="32px"> <p2 class="abilitylist">SOFTWARE DEVELOPMENT</p2> <br>
+        <img src="img/Cybersecurity.png" style="vertical-align:middle" width="32px" height="32px"> <p2 class="abilitylist">WEB DEVELOPMENT</p2> <br>
+        <img src="img/RamUpgrade.png" style="vertical-align:middle" width="32px" height="32px"> <p2 class="abilitylist">BACKEND</p2>
         </div>
-
         <div class="statscontainer">
         <p><b>byeoon</b></p>
-        <p class="small">COMPUTER ON: <span style="color: red; font-weight: bold;">NO</span></p>
-        <p class="small">SPOTIFY: <span style="color: red; font-weight: bold;">NO</span></p>
+        <p class="small" id="time">🕜︎ <span style="color: green; font-weight: bold;">NULL</span></p>
+        <p class="small">🖳 <span style="color: red; font-weight: bold;">OFFLINE</span></p>
+        <p class="small">♫ <span style="color: red; font-weight: bold;">NULL</span></p>
         </div>
 
      </div>
 
         
 </body>
+</html>
+<script>
+var estTime = moment().tz("EST");
+document.getElementById("time").textContent = estTime;
+</script>

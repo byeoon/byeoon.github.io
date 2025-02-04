@@ -15,6 +15,38 @@
   font-family: Rajdhani;
 }
 
+.p2 {
+  font-family: Orbitron;
+  color: gray;
+  font-size: 12px;
+}
+
+.results {
+  color: #F0ED6A;
+  letter-spacing: 1.3px;
+  text-shadow: 1px 1px 8px #D5AE6A;
+  text-align: left; 
+}
+
+.affiliation {
+  color: #6CF6FC;
+  font-weight: 500;
+  letter-spacing: 1.3px;
+  text-align: left; 
+}
+
+.abilitylist {
+  color: #6CF6FC;
+  font-weight: 450;
+}
+
+.test {
+  width: 200px;
+  height: 200px;
+  background: red;
+  clip-path: polygon(53% 20%, 92% 20%, 96% 26%, 100% 38%, 5% 38%, 4% 29%, 0 20%);
+}
+
 .fortheloveofgodstopmakingitbold {
   font-weight: 400;
 }
@@ -52,9 +84,9 @@ a:hover {
 
 
 .coolcontainer {
-  border: 1px solid #93b9ff;
-  box-shadow: 0 0 12px 5px #1d1d31;
-  background-color:rgb(15, 15, 30);
+  border: 2px solid #5dafb1;
+  box-shadow: 0 0 12px 8px #373774;
+  background-color:rgba(20, 17, 25, 0.8);
   width: 350px;
 
   padding: 20px;
@@ -62,7 +94,7 @@ a:hover {
   align-self: center;  
   align-content: center; 
   animation-name: showup;
-  animation-duration: 1.3s;
+  animation-duration: 1s;
 }
 
 .small {
@@ -70,9 +102,8 @@ a:hover {
 }
 
 .statscontainer {
-  border: 1px solid #93b9ff;
-  box-shadow: 0 0 12px 5px #1d1d31;
-  background-color:rgba(16, 32, 75, 0.5);
+  border: 2px solid #5dafb1;
+  background-color:rgba(20, 17, 25, 0.8);
   color: white;
   width: 350px;
   position: absolute;
@@ -105,8 +136,8 @@ a:hover {
 }
 
 body { 
-  background-color: rgb(32, 32, 53);
-  background-image: url("img/bg2.png");
+  background-color: rgb(12, 12, 27);
+  background-image: url("img/bg.png");
   background-position: center;
   background-blend-mode: overlay;
   position: sticky;
@@ -114,7 +145,10 @@ body {
   margin: 0;
   padding: 0;
   overflow: auto;
+ /* box-shadow: inset 0 0 100px #310404a6; */ 
 }
+
+
 
   .header {
     font-family: "Orbitron", sans-serif;
