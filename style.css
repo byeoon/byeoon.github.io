@@ -60,7 +60,7 @@ a:hover {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+  height: 100vh; /* todo - fix */
   margin: auto;
   flex-direction: column;
   gap: 10px;
@@ -98,12 +98,14 @@ a:hover {
   width: 250px;
   position:relative;
   right: 400px;
-  bottom: 300px;
-  padding: 10px;
+  bottom: 400px;
+  padding: 8px;
   border-radius: 10px;
   align-self: left;  
-  transform: rotate(-5deg); /* Equal to rotateZ(45deg) */
+  transform: rotate(-5deg);
   align-content: left; 
+  z-index: 1;
+  /* margin-bottom: -50px; this fixes it but removes the button hover entirely, and looks weird.*/
 }
 
 #notavailable {
