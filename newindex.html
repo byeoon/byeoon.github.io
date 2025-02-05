@@ -20,7 +20,7 @@
 
 <body>
     <div class="main">
-      <div class="coolcontainer">
+      <div class="coolcontainer" id="home"> 
         <p class="p2">SCAN RESULTS</p>
         <h2 class="results">BYEOON</h2>
         <p class="p2">AFFILIATION</p>
@@ -38,8 +38,8 @@
           <a href="https://vorlie.pages.dev"> <img src="https://vorlie.pages.dev/images/vorlie.png" height=31 width=88 frameborder=0 loading=lazy></img></a>
           <iframe src="https://pre1ude.dev/referer" height=31 width=88 frameborder=0 referrerpolicy=“origin”
             loading=lazy></iframe>
-        </div>
-        <div class="statscontainer" onClick="">
+      </div>      
+        <div class="statscontainer" onClick="changeMenu(2)">
           <img src="img/CyberNew.png" style="vertical-align:middle; float: right;" width="32px" height="32px"> <p2 class="abilitylist">PROJECTS <br><span class="rect">READY</span></p2>
         </div>
         <div class="statscontainer">
@@ -48,10 +48,21 @@
         <div class="statscontainer" id="notavailable">
           <img src="img/CyberNew.png" style="vertical-align:middle; float: right;" width="32px" height="32px"> <p2 class="abilitylist">BLOG <br><span class="rect">NOT ENOUGH RAM</span></p2>
         </div>
-     </div>
-     
-  
-
-        
+    </div>
 </body>
 </html>
+
+<script>
+function changeMenu(num) {
+  switch(num) {
+    case 1:
+    document.getElementById("home");
+    break;
+
+    case 2:
+
+    break;
+    
+  }
+}
+</script>
