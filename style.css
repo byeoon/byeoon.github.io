@@ -59,7 +59,7 @@ a:hover {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100vh; /* todo - fix */
+  height: 100vh;
   margin: auto;
   flex-direction: column;
   gap: 10px;
@@ -89,6 +89,8 @@ a:hover {
   width: 500px;
   padding: 5px;
   height: 80px;
+  animation-name: loading;
+  animation-duration: 1.6s;
 }
 
 .small {
@@ -109,7 +111,6 @@ a:hover {
   transform: rotate(-5deg);
   align-content: left; 
   z-index: 1;
-  /* margin-bottom: -50px; this fixes it but removes the button hover entirely, and looks weird.*/
 }
 
 #notavailable {
@@ -180,6 +181,20 @@ body {
     text-align: center;
   }
 
+  #progressbar {
+    background-color: black;
+    border-radius: 13px;
+    /* (height of inner div) / 2 + padding */
+    padding: 3px;
+  }
+  
+  #progressbar>div {
+    background-color: #6ecfff;
+    width: 40%;
+    /* Adjust with JavaScript */
+    height: 20px;
+  }
+
   @keyframes showup {
     from {padding: 0px; transform: rotateY(90deg); content-visibility: hidden; }
     to {padding: 20px; transform: rotateY(0deg); content-visibility: visible; }
@@ -191,5 +206,10 @@ body {
   }
 
   @keyframes loading {
-  
+    from {padding: 0px; transform: rotateY(90deg); content-visibility: hidden; }
+    to {padding: 5px; transform: rotateY(0deg); content-visibility: visible; }
+  }
+
+  @keyframes loadingBar {
+
   }
