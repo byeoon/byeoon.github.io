@@ -85,6 +85,12 @@ a:hover {
   animation-duration: 1s;
 }
 
+#loadingbar {
+  width: 500px;
+  padding: 5px;
+  height: 80px;
+}
+
 .small {
   height: 0.6em;
 }
@@ -174,8 +180,16 @@ body {
     text-align: center;
   }
 
-
   @keyframes showup {
     from {padding: 0px; transform: rotateY(90deg); content-visibility: hidden; }
     to {padding: 20px; transform: rotateY(0deg); content-visibility: visible; }
+  }
+
+  @keyframes close {
+    from {padding: 20px; transform: rotateX(0deg); display:block; }
+    to {padding: 0px; transform: rotateX(90deg); display: none; }
+  }
+
+  @keyframes loading {
+  
   }
