@@ -20,7 +20,7 @@
 
 <body>
     <div class="main">
-      <div class="coolcontainer" id="home">
+      <div class="coolcontainer" id="1">
         <p class="p2">SCAN RESULTS</p>
         <h2 class="results">BYEOON</h2>
         <p class="p2">AFFILIATION</p>
@@ -52,11 +52,11 @@
           <img src="img/CyberNew.png" style="vertical-align:middle; float: right;" width="32px" height="32px"> <p2 class="abilitylist">BLOG <br><span class="rect">NOT ENOUGH RAM</span></p2>
         </div>
     </div>
+    
 </body>
 </html>
 
 <script>
-
   window.addEventListener("hashchange", function() {
     if(window.location.hash === "#home") {
       changeMenu(1);
@@ -70,18 +70,14 @@
 
 function changeMenu(num) {
   for(i = 0; i < document.getElementsByClassName("coolcontainer").length; i++) {
-    // too lazy yawning emoji
-  }
-  switch(num) {
-    case 1:
-    document.getElementById("home");
-    window.location.href="/#home";
-    break;
+    if(document.getElementsByClassName("coolcontainer")[i].id !== num) {
+      document.getElementsByClassName("coolcontainer")[i].style.opacity = "0";
+      document.getElementsByClassName("coolcontainer")[i].style.zIndex = "0";
+   //   document.getElementsByClassName("coolcontainer")[i].style.display = "none";
+    }
+    document.getElementById(num).style.opacity = "1";
+    document.getElementById(num).style.zIndex = "5";
 
-    case 2:
-    window.location.href="/#projects"
-    break;
-    
   }
 }
 </script>
