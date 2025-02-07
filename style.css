@@ -120,6 +120,13 @@ a:hover {
   height: 0.6em;
 }
 
+.projectbox {
+  border: 1px solid #5dafb1;
+  width: 300px;
+  height: 100px;
+  border-radius: 15px;
+}
+
 .statscontainer {
   border: 2px solid #5dafb1;
   background-color:rgba(20, 17, 25, 0.8);

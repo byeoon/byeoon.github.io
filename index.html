@@ -26,13 +26,13 @@
         <p class="p2">SCAN RESULTS</p>
         <h2 class="results">BYEOON</h2>
         <p class="p2">ABOUT</p>
-        <h2 class="affiliation">stupid programmer who does a lot of things. my favorite games are cyberpunk (obviously), vrchat, roblox, and most of the hoyoverse franchise.  </h2>
+        <h2 class="affiliation">stupid programmer who does a lot of things. my favorite games are cyberpunk (obviously), vrchat, and more.</h2>
         <!-- <h2 class="affiliation">NONE </h2>  -->
         <p class="p2">ABILITIES</p>
-        <img src="img/CyberNew2.png" style="vertical-align:middle" width="32px" height="32px"> <p2 class="abilitylist">CYBERSECURITY</p2> <br>
-        <img src="img/Software.png" style="vertical-align:middle" width="32px" height="32px"> <p2 class="abilitylist">SOFTWARE DEVELOPMENT</p2> <br>
-        <img src="img/WebDev.png" style="vertical-align:middle" width="32px" height="32px"> <p2 class="abilitylist">WEB DEVELOPMENT</p2> <br>
-        <img src="img/Backend.png" style="vertical-align:middle" width="32px" height="32px"> <p2 class="abilitylist">BACKEND</p2>
+        <img src="img/CyberNew2.png" style="vertical-align:middle; border: 1px solid #52eef6;" width="32px" height="32px"> <p2 class="abilitylist">CYBERSECURITY</p2> <br>
+        <img src="img/Software.png" style="vertical-align:middle; border: 1px solid #52eef6;" width="32px" height="32px"> <p2 class="abilitylist">SOFTWARE DEVELOPMENT</p2> <br>
+        <img src="img/WebDev.png" style="vertical-align:middle; border: 1px solid #52eef6;" width="32px" height="32px"> <p2 class="abilitylist">WEB DEVELOPMENT</p2> <br>
+        <img src="img/Backend.png" style="vertical-align:middle; border: 1px solid #52eef6;" width="32px" height="32px"> <p2 class="abilitylist">BACKEND</p2>
         <p class="p2">NCPD DATABASE</p>
         <p class="affiliation">'DROP_TABLE ncpd_wanted; SELECT * FROM byeoon_friends'</p>
          <img src="img/button.png" height=31 width=88>
@@ -46,21 +46,40 @@
             <a href="https://marsh.zone/"><img src="https://marsh.zone/images/88x31.png" width="88" height="31" loading="lazy" alt="who be up marshing they shift" /></a>
             <a href="https://vendicated.dev/"><img src="https://codeberg.org/vee/vendicated.dev/raw/branch/main/public/assets/81x33%20by%20arHSM%20%3C3/vee.1.png" width="88" height="31" loading="lazy" alt="vennie vencord" /></a>
       </div>
+
+      <div class="coolcontainer" id="2" style="display: none;">
+        <img src="img/heartemotemadebyshoritsubtw.png" style="vertical-align:middle; float: right;" width="32px" height="32px">
+        <h2 class="results">PROJECTS</h2>
+        <p class="p2">ABOUT</p>
+        <h2 class="affiliation">Projects that I want to showcase</h2>
+        <!-- <h2 class="affiliation">NONE </h2>  -->
+        <p class="p2">ABILITIES</p>
+        <img src="img/CyberNew2.png" style="vertical-align:middle; border: 1px solid #52eef6;" width="32px" height="32px"> <p2 class="abilitylist">CYBERSECURITY</p2> <br>
+        <img src="img/Software.png" style="vertical-align:middle; border: 1px solid #52eef6;" width="32px" height="32px"> <p2 class="abilitylist">SOFTWARE DEVELOPMENT</p2> <br>
+        <img src="img/WebDev.png" style="vertical-align:middle; border: 1px solid #52eef6;" width="32px" height="32px"> <p2 class="abilitylist">WEB DEVELOPMENT</p2> <br>
+        <img src="img/Backend.png" style="vertical-align:middle; border: 1px solid #52eef6;" width="32px" height="32px"> <p2 class="abilitylist">BACKEND</p2>
+  
+      </div>
+      <div class="statscontainer" onClick="changeMenu(1)">
+        <img src="img/CyberNew.png" style="vertical-align:middle; float: right;" width="32px" height="32px"> <p2 class="abilitylist">HOME <br><span class="rect">READY</span></p2>
+      </div>
         <div class="statscontainer" onClick="changeMenu(2)">
           <img src="img/CyberNew.png" style="vertical-align:middle; float: right;" width="32px" height="32px"> <p2 class="abilitylist">PROJECTS <br><span class="rect">READY</span></p2>
         </div>
-        <div class="statscontainer">
+        <div class="statscontainer" onClick="changeMenu(3)"> 
           <img src="img/CyberNew.png" style="vertical-align:middle; float: right;" width="32px" height="32px"> <p2 class="abilitylist">SOCIALS <br><span class="rect">READY</span></p2>
         </div>
+        <!-- 
         <div class="statscontainer" id="notavailable">
           <img src="img/CyberNew.png" style="vertical-align:middle; float: right;" width="32px" height="32px"> <p2 class="abilitylist">BLOG <br><span class="rect">NOT ENOUGH RAM</span></p2>
         </div>
+        -->
     </div>
-    
 </body>
 </html>
 
 <script>
+  changeMenu(1);
   window.addEventListener("hashchange", function() {
     if(window.location.hash === "#home") {
       changeMenu(1);
@@ -70,6 +89,10 @@
       changeMenu(2);
     }
 
+    if(window.location.hash === "#socials") {
+      changeMenu(3);
+    }
+
   });
 
 function changeMenu(num) {
@@ -77,11 +100,11 @@ function changeMenu(num) {
     if(document.getElementsByClassName("coolcontainer")[i].id !== num) {
       document.getElementsByClassName("coolcontainer")[i].style.opacity = "0";
       document.getElementsByClassName("coolcontainer")[i].style.zIndex = "0";
-   //   document.getElementsByClassName("coolcontainer")[i].style.display = "none";
+     document.getElementsByClassName("coolcontainer")[i].style.display = "none";
     }
     document.getElementById(num).style.opacity = "1";
     document.getElementById(num).style.zIndex = "5";
-
+    document.getElementById(num).style.display = "block";
   }
 }
   particlesJS.load('particles-js', 'particlesjs-config.json', function () {
