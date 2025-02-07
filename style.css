@@ -91,7 +91,7 @@ a:hover {
   width: 600px;
   padding: 5px;
   height: 50px;
-  animation: loading linear;
+  animation: loading 0.5s linear;
   animation-timing-function: ease-in-out;
   border-radius: 0px;
   position: absolute;
