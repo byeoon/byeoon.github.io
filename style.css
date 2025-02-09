@@ -167,13 +167,20 @@ a:hover {
   box-shadow: 0 0 12px 8px #743737;
 }
 
+.subtitle {
+  color: #646477;
+  font-size: 12px;
+  text-shadow: none;
+}
+
 .rect {
-  height: 100px;
-  width: 100px;
+  width: 300px;
   outline:1px solid #5dafb1;
   overflow-wrap: break-word;
   font-size: 12px;
   font-weight: 500;
+  margin: 4px;
+  padding: 0;
 }
 
 .statscontainer:hover {
