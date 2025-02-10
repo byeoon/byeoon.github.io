@@ -180,7 +180,7 @@ a:hover {
   font-size: 12px;
   font-weight: 500;
   margin: 4px;
-  padding: 0;
+  padding: 0; /* I wish i could add more padding, but if I do the top gets messed up. */
 }
 
 .statscontainer:hover {
