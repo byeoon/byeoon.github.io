@@ -181,6 +181,7 @@ a:hover {
   font-weight: 500;
   margin: 4px;
   padding: 0; /* I wish i could add more padding, but if I do the top gets messed up. */
+  border-radius: 3px;
 }
 
 .statscontainer:hover {
