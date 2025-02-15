@@ -189,7 +189,7 @@ a:hover {
   border: 1px solid #73d5d6;
   background-color:#2d2c41e5;
   box-shadow: 0 0 12px 8px #373774;
-  transition: box-shadow 0.15s, box-border 0.15s, padding 0.15s;
+  transition: box-shadow 0.15s, border 0.15s, padding 0.15s;
   cursor: pointer;
 }
 
