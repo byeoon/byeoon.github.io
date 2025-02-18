@@ -14,50 +14,148 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"
     integrity="sha512-Kef5sc7gfTacR7TZKelcrRs15ipf7+t+n7Zh6mKNJbmW+/RRdCW9nwfLn4YX0s2nO6Kv5Y2ChqgIakaC6PW09A=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/npm/moment-timezone@0.5.47/builds/moment-timezone-with-data.min.js"></script>
 </head>
+
+
 <body>
   <div id="particles-js"></div>
-  <div class="main">
-    <div class="coolcontainer">
-      <img src="https://avatars.githubusercontent.com/u/47872200?v=4"
-        style="border-radius: 50%; vertical-align: middle;" width="64px" height="64px">
-      <span class="gradientbyeoon" style="vertical-align:middle; text-shadow: 4px 0 1rem #a9a4f1; padding: 12px; font-size: 48px;">>
-        byeoon </span>
-      <h4 class="roboto-regular" style="margin: 12px"> <a href="https://byeoon.dev/">about</a> | <a
-          href="/portfolio.html">portfolio</a> | <a href="/blog.html">blog</a> | <a
-          href="https://github.com/byeoon/byeoon.github.io">source</a></h4>
-    <center>  <a href="https://wakatime.com/@62b44d9a-4919-4631-8e26-2047945637cb"><img
-          src="https://wakatime.com/badge/user/62b44d9a-4919-4631-8e26-2047945637cb.svg"
-          alt="Total time coded since Jun 30 2024" /></a></center>
-      <h4 class="fortheloveofgodstopmakingitbold">Software Developer, Web Developer and Cybersecurity enthusiast. I focus in C#, Javascript, and Typescript. I've
-        contributed
-        to various projects, you can check them out on my <a href="/portfolio.html">portfolio.</a></h4>
+    <div class="main">
+      <div class="coolcontainer" id="1">
+        <img src="img/heartemotemadebyshoritsubtw.png" style="vertical-align:middle; float: right;" width="32px" height="32px">
+        <p class="p2">SCAN RESULTS</p>
+        <h2 class="results">BYEOON</h2>
+        <p class="p2">ABOUT</p>
+        <h2 class="affiliation">stupid programmer who does a lot of things. my favorite games are cyberpunk (obviously), vrchat, and more.</h2>
+        <!-- <h2 class="affiliation">NONE </h2>  -->
+        <p class="p2">ABILITIES</p>
+        <img src="img/CyberNew2.png" style="vertical-align:middle; border: 1px solid #52eef6;" width="32px" height="32px"> <p2 class="abilitylist">CYBERSECURITY</p2> <br>
+        <img src="img/Software.png" style="vertical-align:middle; border: 1px solid #52eef6;" width="32px" height="32px"> <p2 class="abilitylist">SOFTWARE DEVELOPMENT</p2> <br>
+        <img src="img/WebDev.png" style="vertical-align:middle; border: 1px solid #52eef6;" width="32px" height="32px"> <p2 class="abilitylist">WEB DEVELOPMENT</p2> <br>
+        <img src="img/Backend.png" style="vertical-align:middle; border: 1px solid #52eef6;" width="32px" height="32px"> <p2 class="abilitylist">BACKEND</p2>
+        <p class="p2">NCPD DATABASE</p>
+        <p class="affiliation">'DROP_TABLE ncpd_wanted; SELECT * FROM byeoon_friends'</p>
+         <img src="img/button.png" height=31 width=88>
+          <a href="https://uwu.gal/about-us"><img src="https://uwu.gal/button.png" width="88" height="31" /></a>
+          <a href="https://deepy.me/"><img src="https://i.imgur.com/PfpetAP.png" width="88" height="31" /> </a>
+          <a href="https://vorlie.pages.dev"> <img src="https://vorlie.pages.dev/images/vorlie.png" height=31 width=88 frameborder=0 loading=lazy></img></a>
+          <iframe src="https://pre1ude.dev/referer" height=31 width=88 frameborder=0 referrerpolicy=“origin”
+            loading=lazy></iframe>
+            <a href="https://specifix.dev"><img src="https://specifix.dev/images/88x31.png" width="88" height="31" loading="lazy" alt="specifix.dev :3" /></a>
+            <a href="https://megu.dev/"><img src="img/megudev.png" width="88" height="31" loading="lazy" alt="im rieing all over" /></a>
+            <a href="https://marsh.zone/"><img src="https://marsh.zone/images/88x31.png" width="88" height="31" loading="lazy" alt="who be up marshing they shift" /></a>
+            <a href="https://vendicated.dev/"><img src="https://codeberg.org/vee/vendicated.dev/raw/branch/main/public/assets/81x33%20by%20arHSM%20%3C3/vee.1.png" width="88" height="31" loading="lazy" alt="vennie vencord" /></a>
+      </div>
 
-      <p align="center">
-        <a href="https://github.com/byeoon">
-        <img src="https://go-skill-icons.vercel.app/api/icons?i=github" />
+      <div class="coolcontainer" id="2" style="display: none;">
+        <img src="img/heartemotemadebyshoritsubtw.png" style="vertical-align:middle; float: right;" width="32px" height="32px">
+        <h2 class="results">PROJECTS</h2>
+        <p class="p2">ABOUT</p>
+        <h2 class="affiliation">Personal projects & things that I have contributed to.</h2>
+        <div class="contrib-badges">
+          <img src="https://vencord.dev/assets/favicon.png" height="24" width="24">
+          <img src="https://raw.githubusercontent.com/enmity-mod/badges/refs/heads/main/assets/contributor.png" height="24" width="24">
+        </div>
+        <!-- <h2 class="affiliation">NONE </h2>  -->
+        <p class="p2">-----</p>
+        <div class="rect">
+          <h1 style="text-align: left; height: 12px; ">MyShare</h1>
+          <h2 class="subtitle" style="text-align: left;">A self file and media sharing service. </h2>
+          <div style="align-content: center;">
+            <a href="https://github.com/MySharee/MyShare">
+          <button style="margin-left: 0; margin-right: auto;">View Source</button>
         </a>
-        <a href="https://steamcommunity.com/id/byeoon/">
-          <img src="https://go-skill-icons.vercel.app/api/icons?i=steam" />
+        <a href="https://myshare.haydar.dev">
+          <button style="margin-left: 0; margin-right: auto;">Visit</button>
         </a>
-        <a href="https://bsky.app/profile/byeoon.dev">
-          <img src="https://go-skill-icons.vercel.app/api/icons?i=bluesky" />
+        </div>
+        </div>
+        <div class="rect">
+          
+          <h1 style="text-align: left; height: 12px;">EmotesPlus</h1>
+          <h2 class="subtitle" style="text-align: left;">An Enmity plugin that allows you to clone and copy emotes. </h2>
+          <a href="https://github.com/byeoon/EmotesPlus">
+          <button style="margin-left: 0; margin-right: auto;">View Source</button>
         </a>
-      </p>
-      <hr><br>
-      <center> <img src="img/button.png" height=31 width=88>
-        <a href="https://uwu.gal/about-us"><img src="https://uwu.gal/button.png" width="88" height="31" /></a>
-        <a href="https://deepy.me/"><img src="https://i.imgur.com/PfpetAP.png" width="88" height="31"/> </a>
-        <iframe src="https://vorlie.pages.dev/iframe/" height=31 width=88 frameborder=0 loading=lazy></iframe>
-        <iframe src="https://pre1ude.dev/referer" height=31 width=88 frameborder=0 referrerpolicy=“origin” loading=lazy></iframe>
+        </div>
+        <div class="rect">
+          <h1 style="text-align: left; height: 12px;">Terminal StatusBar</h1>
+          <h2 class="subtitle" style="text-align: left;">A VSC Extension that adds a terminal button in the status bar. </h2>
+          <a href="https://github.com/byeoon/Terminal-StatusBar">
+          <button style="margin-left: 0; margin-right: auto;">View Source</button>
+          </a>
+        </div>
+      </div>
+
+      <div class="coolcontainer" id="3" style="display: none;">
+        <img src="img/heartemotemadebyshoritsubtw.png" style="vertical-align:middle; float: right;" width="32px" height="32px">
+        <h2 class="results">SOCIALS</h2>
+        <p class="p2">ABOUT</p>
+        <h2 class="affiliation">My public accounts so you can follow me wherever you go.</h2>
+        <center>
+        <div class="socials">
+          <a href="https://github.com/byeoon">
+            <img src="https://go-skill-icons.vercel.app/api/icons?i=github" />
+            </a>
+            <a href="https://steamcommunity.com/id/byeoon/">
+              <img src="https://go-skill-icons.vercel.app/api/icons?i=steam" />
+            </a>
+            <a href="https://bsky.app/profile/byeoon.dev">
+              <img src="https://go-skill-icons.vercel.app/api/icons?i=bluesky" />
+            </a>
+        </div>
+        <p class="p2">Need to shoot me an email? Send one over at byeoon@byeoon.dev</p>
+        </center>
+      </div>
+      <img src="https://visit-counter.vercel.app/counter.png?page=https%3A%2F%2Fbyeoon.dev%2F&s=37&c=00ffe6&bg=00000000&no=5&ff=digi&tb=&ta=" alt="visits">
+      <a href="#home" class="statscontainer">
+        <img src="img/CyberNew.png" style="vertical-align:middle; float: right;" width="32px" height="32px"> <p2 class="abilitylist">HOME <br><span class="rect">READY</span></p2>
+      </a>
+        <a href="#projects" class="statscontainer">
+          <img src="img/CyberNew.png" style="vertical-align:middle; float: right;" width="32px" height="32px"> <p2 class="abilitylist">PROJECTS <br><span class="rect">READY</span></p2>
+        </a>
+        <a href="#socials" class="statscontainer"> 
+          <img src="img/CyberNew.png" style="vertical-align:middle; float: right;" width="32px" height="32px"> <p2 class="abilitylist">SOCIALS <br><span class="rect">READY</span></p2>
+        </a>
+        <a class="statscontainer" id="notavailable">
+          <img src="img/CyberNew.png" style="vertical-align:middle; float: right;" width="32px" height="32px"> <p2 class="abilitylist">BLOG <br><span class="rect">NOT ENOUGH RAM</span></p2>
+        </a>
+        
     </div>
-  </div>
-
+    
+    
 </body>
+</html>
+
 <script>
+  changeMenu(1);
+  window.addEventListener("hashchange", function() {
+    if(window.location.hash === "#home") {
+      changeMenu(1);
+    }
+
+    if(window.location.hash === "#projects") {
+      changeMenu(2);
+    }
+
+    if(window.location.hash === "#socials") {
+      changeMenu(3);
+    }
+
+  });
+
+function changeMenu(num) {
+  for(i = 0; i < document.getElementsByClassName("coolcontainer").length; i++) {
+    if(document.getElementsByClassName("coolcontainer")[i].id !== num) {
+      document.getElementsByClassName("coolcontainer")[i].style.opacity = "0";
+      document.getElementsByClassName("coolcontainer")[i].style.zIndex = "0";
+     document.getElementsByClassName("coolcontainer")[i].style.display = "none";
+    }
+    document.getElementById(num).style.opacity = "1";
+    document.getElementById(num).style.zIndex = "5";
+    document.getElementById(num).style.display = "block";
+  }
+}
   particlesJS.load('particles-js', 'particlesjs-config.json', function () {
   });
 </script>
-
-<script src="./script.js"></script>
-</html>

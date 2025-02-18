@@ -1,6 +1,5 @@
-
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=VT323');
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron');
 
 #particles-js {
   position: fixed;
@@ -12,12 +11,35 @@
 }
 
 * {
-  font-family:Roboto;
+  font-family: Rajdhani;
 }
 
-.fortheloveofgodstopmakingitbold {
-  font-weight: 400;
+.p2 {
+  font-family: Orbitron;
+  color: gray;
+  font-size: 12px;
 }
+
+.results {
+  color: #F0ED6A;
+  letter-spacing: 1.3px;
+  text-shadow: 1px 1px 8px #D5AE6A;
+  text-align: left; 
+}
+
+.affiliation {
+  color: #6CF6FC;
+  font-weight: 500;
+  letter-spacing: 1.3px;
+  font-size: 15px;
+  text-align: left; 
+}
+
+.abilitylist {
+  color: #6CF6FC;
+  font-weight: 450;
+}
+
 h1, h2, h3, h4, p1, p2, p3, p4 {
   color: white;
   align-content: center;
@@ -52,15 +74,123 @@ a:hover {
 
 
 .coolcontainer {
-  border: 1px solid #a5abff;
-  box-shadow: 0 0 12px 5px #1d1d31;
-  background-color:rgb(15, 15, 30);
+  border: 2px solid #5dafb1;
+  box-shadow: 0 0 20px 2px #5e91c0;
+  background-color:rgba(20, 17, 25, 0.8);
+  position:relative;
   width: 350px;
-
   padding: 20px;
   border-radius: 10px;
-  align-self: center;  
-  align-content: center; 
+  margin-top: 250px;
+  animation-name: showup;
+  animation-duration: 1s;
+  z-index: 5;
+}
+
+#loadingbar {
+  width: 600px;
+  padding: 5px;
+  height: 50px;
+  animation: loading 0.5s linear;
+  animation-timing-function: ease-in-out;
+  border-radius: 0px;
+  position: absolute;
+  display: flexbox;
+  bottom: 300px;
+  margin: 2px;
+}
+
+#particles-js {
+  z-index: 1;
+  position: absolute;
+}
+.warningprompt {
+  padding: 5px;
+  margin: 5px;
+  background-color: #e05151;
+  color: black;
+  text-shadow: none;
+  font-weight: 500;
+  box-shadow: 0 0 12px 8px #693838;
+  position: absolute;
+  bottom: 400px;
+}
+
+.small {
+  height: 0.6em;
+}
+
+.projectbox {
+  border: 1px solid #5dafb1;
+  width: 300px;
+  height: 100px;
+  border-radius: 15px;
+}
+
+.statscontainer {
+  border: 2px solid #5dafb1;
+  background-color:rgba(20, 17, 25, 0.8);
+  color: white;
+  width: 250px;
+  position:relative;
+  right: 400px;
+  bottom: 400px;
+  padding: 8px;
+  border-radius: 10px;
+  align-self: left;  
+  transform: rotate(-5deg);
+  align-content: left; 
+  margin: 1px;
+  z-index: 1;
+}
+
+.uploading {
+  height: 10px;
+  margin: 3px;
+  padding: 3px;
+  color: #8ff8fa;
+
+}
+
+.uploading:after {
+  content: "";
+  animation: loadingBarText 5.4s linear; 
+}
+
+#notavailable {
+  border: 2px solid #ff4b4b;
+  background-color:rgba(78, 12, 12, 0.8);
+}
+
+#notavailable:hover {
+  background-color:rgba(78, 12, 12, 0.8);
+  border: 3px solid #ff4b4b;
+  box-shadow: 0 0 12px 8px #743737;
+}
+
+.subtitle {
+  color: #646477;
+  font-size: 12px;
+  text-shadow: none;
+}
+
+.rect {
+  width: 300px;
+  outline:1px solid #5dafb1;
+  overflow-wrap: break-word;
+  font-size: 12px;
+  font-weight: 500;
+  margin: 4px;
+  padding: 0; /* I wish i could add more padding, but if I do the top gets messed up. */
+  border-radius: 3px;
+}
+
+.statscontainer:hover {
+  border: 1px solid #73d5d6;
+  background-color:#2d2c41e5;
+  box-shadow: 0 0 12px 8px #373774;
+  transition: box-shadow 0.15s, border 0.15s, padding 0.15s;
+  cursor: pointer;
 }
 
 .wrap {
@@ -84,8 +214,8 @@ a:hover {
 }
 
 body { 
-  background-color: rgb(32, 32, 53);
-  background-image: url("img/bg2.png");
+  background-color: rgb(12, 12, 27);
+  background-image: url("img/bg.jpg");
   background-position: center;
   background-blend-mode: overlay;
   position: sticky;
@@ -93,21 +223,66 @@ body {
   margin: 0;
   padding: 0;
   overflow: auto;
+ /* box-shadow: inset 0 0 100px #310404a6; */ 
 }
 
   .header {
-    font-family: "VT323", sans-serif;
+    font-family: "Orbitron", sans-serif;
     font-size: 250%;
     margin: -5px;
     font-weight: 500;
     font-style: normal;
     text-align: center;
   }
-  
-  span {
-    font-weight: 500;
-    font-size: 200%;
-    font-style: bold;
-    text-align: center;
-    color: white;
+
+  #progressbar {
+    background-color: black;
+    outline: 2px solid #5dafb1;
+    /* (height of inner div) / 2 + padding */
+    padding: 3px;
   }
+  
+  #progressbar>div {
+    background-color: #ff6e6e;
+    width: 0%;
+    /* Adjust with JavaScript */
+    height: 20px;
+    animation: loadingBar;
+    animation-duration: 5s;
+  }
+
+  @keyframes showup {
+    from {padding: 0px; transform: rotateY(90deg); content-visibility: hidden; }
+    to {padding: 20px; transform: rotateY(0deg); content-visibility: visible; }
+  }
+
+  @keyframes close {
+    from {padding: 20px; transform: rotateX(0deg); display:block; }
+    to {padding: 0px; transform: rotateX(90deg); display: none; }
+  }
+
+  @keyframes loading {
+    from {padding: 0px; transform: rotateY(90deg); content-visibility: hidden; }
+    to {padding: 5px; transform: rotateY(0deg); content-visibility: visible; }
+  }
+
+  @keyframes loadingBar {
+    0% {width: 0%; }
+    20% {width: 20%;}
+    40% {width: 40%;}
+    60% {width: 60%;}
+    80% {width: 80%;}
+    100% {width: 100%;}
+  }
+
+  @keyframes loadingBarText {
+    0% {content: "UPLOADING 0%"; }
+    20% {content: "UPLOADING 20%";}
+    40% {content: "UPLOADING 40%";}
+    60% {content: "UPLOADING 60%";}
+    80% {content: "UPLOADING 80%";}
+    98% {content: "UPLOADING 100%";}
+    100% {content: "UPLOADING COMPLETE";}
+  }
+
+  
