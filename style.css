@@ -245,7 +245,6 @@ body {
   #progressbar>div {
     background-color: #ff6e6e;
     width: 0%;
-    /* Adjust with JavaScript */
     height: 20px;
     animation: loadingBar;
     animation-duration: 5s;
