@@ -1,18 +1,33 @@
 @import url('https://fonts.googleapis.com/css2?family=Rajdhani:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Orbitron');
 
-#particles-js {
-  position: fixed;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-}
-
 * {
   font-family: Rajdhani;
 }
+
+.navbar {
+  background-color: #727fff;
+  overflow: hidden;
+}
+
+body { 
+  background-color: #00002b;
+  position: sticky;
+  top: 0;   
+  margin: 0;
+  padding: 0;
+  overflow: auto;
+}
+
+.navbar a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
 
 .p2 {
   font-family: Orbitron;
@@ -200,19 +215,6 @@ a:hover {
   background-clip: text;
   display: inline-block;
   font-weight: bold;
-}
-
-body { 
-  background-color: rgb(12, 12, 27);
-  background-image: url("img/bg.jpg");
-  background-position: center;
-  background-blend-mode: overlay;
-  position: sticky;
-  top: 0;   
-  margin: 0;
-  padding: 0;
-  overflow: auto;
- /* box-shadow: inset 0 0 100px #310404a6; */ 
 }
 
   .header {
