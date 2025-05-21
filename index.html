@@ -58,52 +58,12 @@
         <img src="img/Software.png" style="vertical-align:middle; border: 1px solid #52eef6;" width="32px" height="32px"> <p2 class="abilitylist">SOFTWARE DEVELOPMENT</p2> <br>
         <img src="img/WebDev.png" style="vertical-align:middle; border: 1px solid #52eef6;" width="32px" height="32px"> <p2 class="abilitylist">WEB DEVELOPMENT</p2> <br>
         <img src="img/Backend.png" style="vertical-align:middle; border: 1px solid #52eef6;" width="32px" height="32px"> <p2 class="abilitylist">BACKEND</p2>
-  
-      </div>
-        <div class="statscontainer" onClick="changeMenu(2)">
-          <img src="img/CyberNew.png" style="vertical-align:middle; float: right;" width="32px" height="32px"> <p2 class="abilitylist">PROJECTS <br><span class="rect">READY</span></p2>
-        </div>
-        <div class="statscontainer" onClick="changeMenu(3)"> 
-          <img src="img/CyberNew.png" style="vertical-align:middle; float: right;" width="32px" height="32px"> <p2 class="abilitylist">SOCIALS <br><span class="rect">READY</span></p2>
-        </div>
-        <!-- 
-        <div class="statscontainer" id="notavailable">
-          <img src="img/CyberNew.png" style="vertical-align:middle; float: right;" width="32px" height="32px"> <p2 class="abilitylist">BLOG <br><span class="rect">NOT ENOUGH RAM</span></p2>
-        </div>
-        -->
+
     </div>
 </body>
 </html>
 
 <script>
-  changeMenu(1);
-  window.addEventListener("hashchange", function() {
-    if(window.location.hash === "#home") {
-      changeMenu(1);
-    }
-
-    if(window.location.hash === "#projects") {
-      changeMenu(2);
-    }
-
-    if(window.location.hash === "#socials") {
-      changeMenu(3);
-    }
-
-  });
-
-function changeMenu(num) {
-  for(i = 0; i < document.getElementsByClassName("coolcontainer").length; i++) {
-    if(document.getElementsByClassName("coolcontainer")[i].id !== num) {
-      document.getElementsByClassName("coolcontainer")[i].style.opacity = "0";
-      document.getElementsByClassName("coolcontainer")[i].style.zIndex = "0";
-     document.getElementsByClassName("coolcontainer")[i].style.display = "none";
-    }
-    document.getElementById(num).style.opacity = "1";
-    document.getElementById(num).style.zIndex = "5";
-    document.getElementById(num).style.display = "block";
-  }
-}
   particlesJS.load('particles-js', 'particlesjs-config.json', function () {
   });
 </script>

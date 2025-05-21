@@ -12,6 +12,7 @@
 
 body { 
   background-color: #00002b;
+  background-image: url('img/bg.jpg');
   position: sticky;
   top: 0;   
   margin: 0;
