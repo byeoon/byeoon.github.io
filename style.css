@@ -9,20 +9,25 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #060054;
+  margin: 20px;
+  background-color: #948edf;
+  border-radius: 256px;
   padding: 4px;
 }
 
 .navbar-right {
   display: flex;
-  gap: 12px;
+  gap: 4px;
+  margin: 4px;
+  padding: 4px;
 }
 
 .hero {
   height: 65vh;
-  background-image: url('img/bg.jpg');
+  background-image: url('img/bg.png');
   background-position: center;
-  filter:blur(4px);
+  background-repeat: no-repeat;
+  filter:blur(2px);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -45,11 +50,9 @@
   display: flex;
   flex-direction: column;
   line-height: 5px;
-  height: 15vh;
-  background-color: #434078;
+  height: 10vh;
+  background-color: #948edf;
   margin: auto;
-  justify-content: center;
-  align-items: center;
 }
 
 .coolcontainer {
@@ -57,6 +60,7 @@
   box-shadow: 0 0 20px 2px #7678ec;
   background-color:rgba(20, 17, 25, 0.8);
   float: right;
+  display: relative;
   width: 350px;
   margin: 20px;
   padding: 20px;
