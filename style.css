@@ -9,7 +9,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #727fff;
+  background-color: #060054;
   padding: 4px;
 }
 
@@ -19,9 +19,12 @@
 }
 
 .hero {
-  height: 65vh; /* Half of the viewport height */
-  background: linear-gradient(#030305 25%, 75%, #0c1020); 
+  height: 65vh;
+  background-image: url('img/bg.jpg');
+  background-position: center;
+  filter:blur(4px);
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
@@ -30,23 +33,34 @@
 
 .main {
   display: flex;
-  align-items: center;
+ /* align-items: center; */
   justify-content: center;
   height: 70vh;
   margin: auto;
   flex-direction: column;
+  z-index: 3;
 }
 
 .premain {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 10vh;
-  background-color: #000;
+  flex-direction: column;
+  line-height: 5px;
+  height: 15vh;
+  background-color: #434078;
   margin: auto;
   justify-content: center;
   align-items: center;
-  text-align: center;
+}
+
+.coolcontainer {
+  border: 2px solid #635db1;
+  box-shadow: 0 0 20px 2px #7678ec;
+  background-color:rgba(20, 17, 25, 0.8);
+  float: right;
+  width: 350px;
+  margin: 20px;
+  padding: 20px;
+  border-radius: 10px;
 }
 
 body { 
@@ -81,10 +95,11 @@ h1, h2, h3, h4, p1, p2, p3, p4 {
   text-shadow: 1px 2px 4px #0a0046;
 }
 
-h1 { 
+#header { 
   font-size: 72px;
   font-family: Courier;
   letter-spacing: 1px;
+  z-index: 2;
 }
 
 a {
@@ -100,17 +115,6 @@ a:hover {
   display: flex;
   justify-content:center;
   gap: 20px;
-}
-
-
-.coolcontainer {
-  border: 2px solid #5dafb1;
-  box-shadow: 0 0 20px 2px #5e91c0;
-  background-color:rgba(20, 17, 25, 0.8);
-  position:relative;
-  width: 350px;
-  padding: 20px;
-  border-radius: 10px;
 }
 
 #loadingbar {
@@ -130,6 +134,7 @@ a:hover {
   z-index: 1;
   position: absolute;
 }
+
 .warningprompt {
   padding: 5px;
   margin: 5px;
@@ -226,6 +231,12 @@ a:hover {
     to {padding: 5px; transform: rotateY(0deg); content-visibility: visible; }
   }
 
+
+  @keyframes gradient {
+    from {background: linear-gradient(#19192a 25%, 75%, #040036); }
+    to {background: linear-gradient(#4b4b9c 95%, 75%, #070164); }
+  }
+  
   @keyframes loadingBar {
     0% {width: 0%; }
     20% {width: 20%;}
