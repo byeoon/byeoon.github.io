@@ -23,7 +23,7 @@
 .results {
   color: #F0ED6A;
   letter-spacing: 1.3px;
-  text-shadow: 1px 1px 8px #D5AE6A;
+  text-shadow: 2px 2px 8px #b38639;
   text-align: left; 
 }
 
@@ -35,6 +35,10 @@
   text-align: left; 
 }
 
+.abilityimage {
+  vertical-align: middle; 
+  border: 1px solid #52eef6;
+}
 .abilitylist {
   color: #6CF6FC;
   font-weight: 450;
@@ -44,7 +48,7 @@ h1, h2, h3, h4, p1, p2, p3, p4 {
   color: white;
   align-content: center;
   text-align: center;
-  text-shadow: 1px 2px 4px #0a0046;
+  text-shadow: 2px 2px 4px #3c355f;
 }
 
 a {
@@ -53,7 +57,7 @@ a {
 }
 a:hover {
   color: #727fff;
-  filter: drop-shadow(0 0px 4px #3b3d7c);
+  filter: drop-shadow(0 0px 4px #32347a);
 }
 
 .main {
@@ -214,8 +218,8 @@ a:hover {
 }
 
 body { 
-  background-color: rgb(12, 12, 27);
-  background-image: url("img/bg.jpg");
+  background-color: rgb(11, 11, 12);
+  background-image: url("img/cyberpunkwallaperp2.png");
   background-position: center;
   background-blend-mode: overlay;
   position: sticky;
@@ -285,4 +289,24 @@ body {
     100% {content: "UPLOADING COMPLETE";}
   }
 
-  
+  @keyframes IDidntKnowHowToDoThisLolThanksNatalie {
+  0% {
+    text-shadow:
+      0 0 4px #fff,
+      0 0 8px #4b5bb9,
+      0 0 12px #564bb9;
+  }
+  50% {
+    text-shadow:
+      0 0 6px #fff,
+      0 0 12px #4d58b9,
+      0 0 18px #4f4db9;
+  }
+  100% {
+    text-shadow:
+      0 0 4px #fff,
+      0 0 8px #4b5bb9,
+      0 0 12px #564bb9;
+  }
+}
+
