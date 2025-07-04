@@ -62,12 +62,14 @@ a:hover {
 
 .main {
   display: flex;
+  position: relative;
   align-items: center;
   justify-content: center;
   height: 100vh;
   margin: auto;
   flex-direction: column;
   gap: 10px;
+  min-height: 600px;
 }
 
 .flexboxing { 
@@ -86,8 +88,8 @@ a:hover {
   padding: 20px;
   border-radius: 10px;
   margin-top: 250px;
-  animation-name: showup;
-  animation-duration: 1s;
+  animation: showup 0.6s ease-out forwards;
+  transform-origin: left center;
   z-index: 5;
 }
 
@@ -255,10 +257,20 @@ body {
     animation-duration: 5s;
   }
 
-  @keyframes showup {
-    from {padding: 0px; transform: rotateY(90deg); content-visibility: hidden; }
-    to {padding: 20px; transform: rotateY(0deg); content-visibility: visible; }
+@keyframes showup {
+  from {
+    padding: 0px;
+    transform: rotateY(90deg);
+    opacity: 0;
+    visibility: hidden;
   }
+  to {
+    padding: 20px;
+    transform: rotateY(0deg);
+    opacity: 1;
+    visibility: visible;
+  }
+}
 
   @keyframes close {
     from {padding: 20px; transform: rotateX(0deg); display:block; }
