@@ -97,6 +97,15 @@ a > img:hover {
   transform-origin: left center;
   z-index: 5; 
   min-height: 550px;
+
+ clip-path: polygon(
+    0 0,
+    calc(100% - 20px) 0,
+    100% 20px,
+    100% calc(100% - 40px),
+    calc(100% - 40px) 100%,
+    0 100%
+  );
 }
 
 #loadingbar {
