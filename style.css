@@ -108,6 +108,23 @@ a > img:hover {
   );
 }
 
+
+.transitioncontainer {
+  border: 2px solid #5dafb1;
+  box-shadow: 0 0 20px 2px #5e91c0;
+  background-color:rgba(20, 17, 25, 0.8);
+  position:relative;
+  width: 350px;
+  padding: 20px;
+  border-radius: 4px;
+  margin-top: 250px;
+  animation: showup 0.6s ease-out forwards;
+  transform-origin: left center;
+  z-index: 5; 
+  transition: all 0.3s ease-in-out;
+}
+
+
 #loadingbar {
   width: 600px;
   padding: 5px;
@@ -175,7 +192,7 @@ a > img:hover {
 
 .uploading:after {
   content: "";
-  animation: loadingBarText 5.4s linear; 
+  animation: loadingBarText 3.5s steps(6) forwards; 
 }
 
 #notavailable {
@@ -307,23 +324,20 @@ body {
   }
 
   @keyframes loadingBar {
-    0% {width: 0%; }
-    20% {width: 20%;}
-    40% {width: 40%;}
-    60% {width: 60%;}
-    80% {width: 80%;}
-    100% {width: 100%;}
+  to {
+    width: 100%;
   }
+}
 
-  @keyframes loadingBarText {
-    0% {content: "UPLOADING 0%"; }
-    20% {content: "UPLOADING 20%";}
-    40% {content: "UPLOADING 40%";}
-    60% {content: "UPLOADING 60%";}
-    80% {content: "UPLOADING 80%";}
-    98% {content: "UPLOADING 100%";}
-    100% {content: "UPLOADING COMPLETE";}
-  }
+@keyframes loadingBarText {
+  0%   { content: "UPLOADING 0%"; }
+  16%  { content: "UPLOADING 20%"; }
+  32%  { content: "UPLOADING 40%"; }
+  48%  { content: "UPLOADING 60%"; }
+  64%  { content: "UPLOADING 80%"; }
+  99%  { content: "UPLOADING 100%"; }
+  100% { content: "UPLOADING COMPLETE"; }
+}
 
   @keyframes IDidntKnowHowToDoThisLolThanksNatalie {
   0% {
