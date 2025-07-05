@@ -54,10 +54,15 @@ h1, h2, h3, h4, p1, p2, p3, p4 {
 a {
   color: #c7c8ff;
   text-decoration: none;
+ /*  background-clip: text; */
 }
 a:hover {
   color: #727fff;
-  filter: drop-shadow(0 0px 4px #32347a);
+  filter: drop-shadow(0 0px 8px #4346ad);
+}
+
+a > img:hover {
+ animation: hoverAnim 0.25s forwards ease-in-out;
 }
 
 .main {
@@ -86,7 +91,7 @@ a:hover {
   position:relative;
   width: 350px;
   padding: 20px;
-  border-radius: 10px;
+  border-radius: 4px;
   margin-top: 250px;
   animation: showup 0.6s ease-out forwards;
   transform-origin: left center;
@@ -143,9 +148,9 @@ a:hover {
   right: 400px;
   bottom: 400px;
   padding: 8px;
-  border-radius: 10px;
+  border-radius: 5px;
   align-self: left;  
-  transform: rotate(-5deg);
+  transform: rotate(-2deg);
   align-content: left; 
   margin: 1px;
   z-index: 1;
@@ -281,6 +286,15 @@ body {
   @keyframes loading {
     from {padding: 0px; transform: rotateY(90deg); content-visibility: hidden; }
     to {padding: 5px; transform: rotateY(0deg); content-visibility: visible; }
+  }
+
+  @keyframes hoverAnim {
+    from {
+      transform: rotateZ(0deg) scale(1); 
+    }
+    to {
+      transform: rotateZ(10deg) scale(1.1);
+    }
   }
 
   @keyframes loadingBar {
