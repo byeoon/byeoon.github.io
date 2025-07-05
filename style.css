@@ -276,14 +276,12 @@ body {
   #progressbar {
     background-color: black;
     outline: 2px solid #5dafb1;
-    /* (height of inner div) / 2 + padding */
     padding: 3px;
   }
   
   #progressbar>div {
     background-color: #ff6e6e;
     width: 0%;
-    /* Adjust with JavaScript */
     height: 20px;
     animation: loadingBar;
     animation-duration: 5s;
@@ -337,26 +335,5 @@ body {
   64%  { content: "UPLOADING 80%"; }
   99%  { content: "UPLOADING 100%"; }
   100% { content: "UPLOADING COMPLETE"; }
-}
-
-  @keyframes IDidntKnowHowToDoThisLolThanksNatalie {
-  0% {
-    text-shadow:
-      0 0 4px #fff,
-      0 0 8px #4b5bb9,
-      0 0 12px #564bb9;
-  }
-  50% {
-    text-shadow:
-      0 0 6px #fff,
-      0 0 12px #4d58b9,
-      0 0 18px #4f4db9;
-  }
-  100% {
-    text-shadow:
-      0 0 4px #fff,
-      0 0 8px #4b5bb9,
-      0 0 12px #564bb9;
-  }
 }
 
