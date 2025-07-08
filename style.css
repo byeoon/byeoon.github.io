@@ -23,8 +23,12 @@
 .results {
   color: #F0ED6A;
   letter-spacing: 1.3px;
-  text-shadow: 2px 2px 8px #b38639;
+  text-shadow: 0px 0px 16px #b46e1d;
   text-align: left; 
+}
+
+.corplabel:hover {
+  cursor: help;
 }
 
 .affiliation {
@@ -35,11 +39,9 @@
   text-align: left; 
 }
 
-.abilityimage {
-  vertical-align: middle; 
-  border: 1px solid #52eef6;
-}
 .abilitylist {
+  vertical-align: middle;
+  margin-left: 4px;
   color: #6CF6FC;
   font-weight: 450;
 }
@@ -86,7 +88,7 @@ a > img:hover {
 
 .coolcontainer {
   border: 2px solid #5dafb1;
-  box-shadow: 0 0 20px 2px #5e91c0;
+  box-shadow: 0 0 10px 8px #000000b0;
   background-color:rgba(20, 17, 25, 0.8);
   position:relative;
   width: 350px;
@@ -96,7 +98,7 @@ a > img:hover {
   animation: showup 0.6s ease-out forwards;
   transform-origin: left center;
   z-index: 5; 
-  min-height: 550px;
+  min-height: 600px;
 }
 
 
