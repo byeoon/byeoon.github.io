@@ -12,8 +12,7 @@
   <meta content="https://byeoon.dev/img/me.png" property="og:image" />
   <link rel="stylesheet" href="style.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js" integrity="sha512-Kef5sc7gfTacR7TZKelcrRs15ipf7+t+n7Zh6mKNJbmW+/RRdCW9nwfLn4YX0s2nO6Kv5Y2ChqgIakaC6PW09A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://cdn.jsdelivr.net/npm/moment-timezone@0.5.47/builds/moment-timezone-with-data.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -117,8 +116,8 @@
         <a href="#projects" class="statscontainer">
           <img src="img/CyberNew.png" style="vertical-align:middle; float: right;" width="32px" height="32px"> <p2 class="abilitylist">PROJECTS <br><span class="rect-ram">READY</span></p2>
         </a>
-        <a class="statscontainer" id="notavailable">
-          <img src="img/CyberNew.png" style="vertical-align:middle; float: right;" width="32px" height="32px"> <p2 class="abilitylist">BLOG <br><span class="rect-ram">NOT ENOUGH RAM</span></p2>
+        <a  href="#blog" class="statscontainer">
+          <img src="img/CyberNew.png" style="vertical-align:middle; float: right;" width="32px" height="32px"> <p2 class="abilitylist">BLOG <br><span class="rect-ram">READY</span></p2>
         </a>
     </div>
 </body>
@@ -137,6 +136,10 @@
 
     if(window.location.hash === "#about") {
       changeMenu(4);
+    }
+
+    if(window.location.hash === "#blog") {
+      window.location.href = "https://byeoon.dev/transition.html";
     }
 
   });
