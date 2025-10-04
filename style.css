@@ -97,6 +97,7 @@ a > img:hover {
   background-color:rgba(78, 12, 12, 0.8);
   border: 3px solid #ff4b4b;
   box-shadow: 0 0 12px 8px #743737;
+  cursor: pointer;
 }
 
 
