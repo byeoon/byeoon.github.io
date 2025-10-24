@@ -15,10 +15,10 @@
     font-size: 24px;
     color: #EF655C;
     width: 600px;
-    height: 30px;
+    height: 40px;
     border: 1px solid #C9504B;
-    text-shadow: 4px 4px 12px #9c4040;
-    filter: drop-shadow(12px 12px 12px #ad4343);
+    text-shadow: 4px 4px 12px #a82828;
+    filter: drop-shadow(12px 12px 14px #7c2020);
 }
 
 .iconcontainer {
@@ -26,28 +26,16 @@
 }
 
 .line {
+    border: 1px solid #C9504B;
     width: 0px;
     height: 5px;
     background-color: #FF6158;
     z-index: 5;
-    animation: loadingline 3.5s ease-in-out;
-}
-
-.loadingbar {
-    width: 600px;
-    padding: 5px;
-    height: 50px;
-    animation: loading 0.5s linear;
-    animation-timing-function: ease-in-out;
-    border-radius: 0px;
-    position: absolute;
-    display: flexbox;
-    bottom: 300px;
-    margin: 2px;
+    animation: loadingline 3.5s ease-in-out forwards;
 }
 
   @keyframes loadingline {
   to {
-    width: 603px;
+    width: 600px;
   }
 }
