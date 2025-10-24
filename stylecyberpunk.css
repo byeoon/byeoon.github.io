@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron');
+
+* {
+    font-family: Rajdhani;
+    background-color: #242424;
+}
+
+.container {
+    z-index: 0;
+    display: inline-block;
+    text-align: left;
+    background-color: #1a1b1f5e;
+    font-weight: bold;
+    font-size: 24px;
+    color: #EF655C;
+    width: 300px;
+    height: 30px;
+    border: 1px solid #C9504B;
+    text-shadow: 4px 4px 12px #9c4040;
+    filter: drop-shadow(12px 12px 12px #ad4343);
+}
+
+.iconcontainer {
+    display: flex;
+}
+
+.line {
+    width: 300px;
+    height: 5px;
+    background-color: #FF6158;
+    z-index: 5;
+}
+
+.loadingbar {
+    width: 600px;
+    padding: 5px;
+    height: 50px;
+    animation: loading 0.5s linear;
+    animation-timing-function: ease-in-out;
+    border-radius: 0px;
+    position: absolute;
+    display: flexbox;
+    bottom: 300px;
+    margin: 2px;
+}
