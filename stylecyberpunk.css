@@ -14,7 +14,7 @@
     font-weight: bold;
     font-size: 24px;
     color: #EF655C;
-    width: 300px;
+    width: 600px;
     height: 30px;
     border: 1px solid #C9504B;
     text-shadow: 4px 4px 12px #9c4040;
@@ -26,10 +26,11 @@
 }
 
 .line {
-    width: 300px;
+    width: 0px;
     height: 5px;
     background-color: #FF6158;
     z-index: 5;
+    animation: loadingline 3.5s ease-in-out;
 }
 
 .loadingbar {
@@ -43,4 +44,10 @@
     display: flexbox;
     bottom: 300px;
     margin: 2px;
+}
+
+  @keyframes loadingline {
+  to {
+    width: 603px;
+  }
 }
