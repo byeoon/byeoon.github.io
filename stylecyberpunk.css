@@ -3,6 +3,9 @@
 
 * {
     font-family: Rajdhani;
+}
+
+body {
     background-color: #242424;
 }
 
@@ -11,7 +14,7 @@
     display: inline-block;
     text-align: left;
     text-indent: 8px;
-    background-color: rgba(32, 49, 116, 0.541);
+    background-color: rgba(5, 5, 5, 0.35);
     font-weight: bold;
     font-size: 24px;
     color: #FF6058;
@@ -37,8 +40,27 @@
     animation: loadingline 3.5s ease-in-out forwards;
 }
 
+.divider {
+  height: 18px;
+  width: 2px;
+  position: absolute;
+  right: 50px;
+  bottom: 0;
+  background-color: #C9504B;
+}
+
   @keyframes loadingline {
   to {
     width: 600px;
   }
+}
+
+@keyframes loadingtext {
+  0%   { content: "CURRENT PROGRESS 0%"; }
+  16%  { content: "CURRENT PROGRESS 20%"; }
+  32%  { content: "CURRENT PROGRESS 40%"; }
+  48%  { content: "CURRENT PROGRESS 60%"; }
+  64%  { content: "CURRENT PROGRESS 80%"; }
+  99%  { content: "CURRENT PROGRESS 100%"; }
+  100% { content: "COMPLETED"; }
 }
