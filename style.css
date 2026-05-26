@@ -30,6 +30,30 @@ html {
     flex-wrap: wrap;
 }
 
+.rect {
+    width: 100%;
+    height: 100%;
+    background-color: #131313;
+    border: solid 2px #383457;
+    filter: drop-shadow(0 0 0.15rem #272850);
+    color: #888;
+}
+
+.rectimportant {
+    width: 100%;
+    height: 100%;
+    background-color: #050505;
+    border: solid 2px #56a0b3;
+    filter: drop-shadow(0 0 0.15rem #384f58);
+    color: #fff;
+}
+
+.rect:hover, .rectimportant:hover {
+    cursor: pointer;
+    background-color: #202020;
+    color: #fff;
+}
+
 .imagecontainer {
     display: flexbox;
     padding: 12px;

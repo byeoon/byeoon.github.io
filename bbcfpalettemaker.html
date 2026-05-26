@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BBCF Palette Editor</title>
+  <meta content="https://byeoon.dev/img/button.png" property="og:image" />
+  <link rel="stylesheet" href="./style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pako/2.1.0/pako.min.js"></script>
+  <script src="https://unpkg.com/upng-js@2.1.0/UPNG.js"></script>
+  <script src="https://unpkg.com/fflate@0.8.2/umd/index.js"></script>
+  <style>
+    .layout {
+      display: flex;
+      align-items: flex-start;
+      gap: 32px;
+      padding: 20px;
+      flex-wrap: wrap;
+    }
+
+    body {
+    max-width: 100% !important;
+    }
+
+    .left-col {
+      flex: 0 0 420px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .right-col {
+      flex: 1;
+      min-width: 300px;
+      position: sticky;
+      top: 16px;
+    }
+
+    #palette-grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 4px;
+    }
+
+    #palette-wrapper {
+      max-height: 220px;
+      overflow-y: auto;
+      margin-top: 6px;
+    }
+
+    .paletteswatch {
+      aspect-ratio: 1;
+      border-radius: 2px;
+      cursor: pointer;
+      border: 2px solid transparent;
+      transition: transform .1s, border-color .1s;
+    }
+
+    .paletteswatch:hover {
+      transform: scale(1.2);
+      z-index: 2;
+      border-color: rgba(255, 255, 255, .5);
+    }
+
+    .paletteswatch.sel {
+      transform: scale(1.25);
+      z-index: 3;
+      border-color: #fff;
+    }
+
+    .canvasHolderthing {
+      overflow: auto;
+      max-height: 70vh;
+      border: 3px solid #fff;
+    }
+
+    #preview-canvas {
+      image-rendering: pixelated;
+      image-rendering: crisp-edges;
+      display: block;
+    }
+
+    select {
+      background: #0e0e10;
+      border: 1px solid #5dafb1;
+      color: #fff;
+      border-radius: 3px;
+      padding: 3px 6px;
+      font-family: monospace;
+    }
+
+    button.opentab {
+      cursor: pointer;
+      font-family: monospace;
+      font-size: 13px;
+      border: 1px solid #5dafb1;
+    }
+
+    button.opentab:hover {
+      background-color: #1f1f2e;
+      border-color: #6CF6FC;
+      color: #6CF6FC;
+    }
+
+    .charlistTemplate {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px;
+    }
+
+    .charlistTemplate .rect {
+      width: auto;
+      margin: 2px;
+      flex: 1 1 140px;
+    }
+
+    .charlistTemplate h1 {
+      font-size: 20px;
+      padding: 4px 6px;
+      margin: 0;
+    }
+
+    #cprev {
+      width: 58px;
+      height: 58px;
+      border-radius: 6px;
+      border: 1px solid #5dafb1;
+      flex-shrink: 0;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="layout">
+    <div class="left-col">
+      <div class="opentab">
+        <h1>BlazBlue:CentralFiction Palette Maker</h1>
+        <div class="description">This project will be getting a fresh coat of paint. The BBCF Palette Maker 
+          allows you to easily make custom color palettes for any character in the game. Right now you 
+          can choose any character in the game, but soon there will be support for uploading existing 
+          palettes.
+           <p id="load-st" style="font-size:13px;margin-top:4px;min-height:16px;color:#fff;"></p>
+        </div>
+        <div class="charlistTemplate" id="charlistTemplate"></div>
+      </div>
+
+      <div class="opentab" id="pal-panel" style="display:none">
+        <div class="rectimportant" style="cursor:pointer;user-select:none" onclick="togglePalette()">
+          Color Palette <span class="subtitle" id="pal-toggle">[show ▾]</span>
+        </div>
+        <div id="palette-wrapper" style="display:none">
+          <div id="palette-grid"></div>
+        </div>
+      </div>
+
+      <div class="opentab" id="ed-panel" style="display:none">
+        <h1>Color Editor</h1>
+        <div class="wrap" style="gap:12px;align-items:flex-start;">
+          <div id="cprev"></div>
+          <div style="flex:1;display:flex;flex-direction:column;gap:6px;">
+            <div class="wrap" style="gap:8px;justify-content:flex-start;">
+              <span class="subtitle">Hex</span>
+              <input type="text" id="hexin" maxlength="7" placeholder="#rrggbb">
+            </div>
+            <div class="wrap" style="gap:6px;"><span class="subtitle"
+                style="width:14px;text-align:center;">R</span><input type="range" id="redslider" min="0"
+                max="255"><input type="number" id="rn" min="0" max="255"></div>
+            <div class="wrap" style="gap:6px;"><span class="subtitle"
+                style="width:14px;text-align:center;">G</span><input type="range" id="greenslider" min="0"
+                max="255"><input type="number" id="gn" min="0" max="255"></div>
+            <div class="wrap" style="gap:6px;"><span class="subtitle"
+                style="width:14px;text-align:center;">B</span><input type="range" id="blueslider" min="0"
+                max="255"><input type="number" id="bn" min="0" max="255"></div>
+            <div class="wrap" style="gap:6px;"><span class="subtitle"
+                style="width:14px;text-align:center;">A</span><input type="range" id="alphaslider" min="0"
+                max="255"><input type="number" id="an" min="0" max="255"></div>
+            <p class="description">Alpha 0 = fully transparent.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="opentab" id="exp-panel" style="display:none">
+        
+        <div class="wrap" style="gap:12px;justify-content:flex-start;margin-top:9px; background-color:#0c0d1162;">
+          <h1>Export</h1>
+          <button class="rect" id="downloadHpl">Download .hpl</button>
+          <button class="rect" id="downloadPng">Download Swatch PNG</button>
+          <button class="rect" id="resetPalette">Reset Palette</button>
+        </div>
+        <p id="exp-st" class="subtitle" style="margin-top:6px;"></p>
+      </div>
+
+    </div>
+
+    <div class="right-col">
+      <div class="opentab">
+        <h1>Live Preview</h1>
+         <select id="scale-sel">
+              <option value="1">1x</option>
+              <option value="2" selected>2x</option>
+              <option value="3">3x</option>
+            </select>
+        <p id="no-prev-msg" class="subtitle" style="margin-top:6px;"></p>
+        <div id="prev-ctrl" style="display:none">
+          <div class="wrap" style="gap:8px;justify-content:flex-start;margin:8px 0;">
+           
+          </div>
+          <div class="canvasHolderthing">
+            <canvas id="preview-canvas"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <canvas id="wc" style="display:none"></canvas>
+
+  <script>
+    let ct = document.getElementById("charlistTemplate");
+    const palette = [];
+    let selIdx = -1;
+    let sprite = null;
+    const ge = id => document.getElementById(id); // getelementbyid callback it makes it cleaner to read and apply
+
+    // this was a pain in the ass to do and i think im missing a few characters
+    const characterList = [
+      { basepalName: "HI", name: "Hibiki" },
+      { basepalName: "IZ", name: "Izanami" },
+      { basepalName: "RG", name: "Ragna" },
+      { basepalName: "VK", name: "Valkenhayn" },
+      { basepalName: "JI", name: "Jin" },
+      { basepalName: "AM", name: "Amane" },
+      { basepalName: "JU", name: "Jubei" },
+      { basepalName: "ES", name: "Es" },
+      { basepalName: "KO", name: "Kokonoe" },
+      { basepalName: "TS", name: "Tsubaki" },
+      { basepalName: "TE", name: "Terumi" },
+      { basepalName: "TK", name: "Taokaka" },
+      { basepalName: "TG", name: "Iron Tager" },
+      { basepalName: "SU", name: "Susanoo" },
+      { basepalName: "RE", name: "Relius" },
+      { basepalName: "RC", name: "Rachel" },
+      { basepalName: "PL", name: "Platnium" },
+      { basepalName: "NU", name: "Nu-13" },
+      { basepalName: "MK", name: "Makoto" },
+      { basepalName: "MA", name: "Mai" },
+      { basepalName: "LI", name: "Litchi" },
+      { basepalName: "LA", name: "Lambda-11" },
+      { basepalName: "KG", name: "Kagura" },
+      { basepalName: "HZ", name: "Hazama" },
+      { basepalName: "HK", name: "Hakumen" },
+      { basepalName: "CE", name: "Celica" },
+      { basepalName: "CR", name: "Carl" },
+      { basepalName: "BU", name: "Bullet" },
+      { basepalName: "BG", name: "Bang" },
+      { basepalName: "AZ", name: "Azrael" },
+      { basepalName: "AR", name: "Arakune" },
+    ];
+
+    const channels = [
+      { slider: 'redslider', number: 'rn', index: 0 },
+      { slider: 'greenslider', number: 'gn', index: 1 },
+      { slider: 'blueslider', number: 'bn', index: 2 },
+      { slider: 'alphaslider', number: 'an', index: 3 },
+    ];
+
+    function populatePresetList() {
+      for (let i = 0; i < characterList.length; i++) {
+        ct.innerHTML += `<div class="rect" onClick="presetFile('${characterList[i].basepalName}')"><h1>${characterList[i].name}</h1></div>`;
+      }
+    }
+    populatePresetList();
+
+    async function presetFile(basepalName) {
+      try {
+        const res = await fetch(`img/basepals/${basepalName}.png`);
+        if (!res.ok) throw new Error(`${basepalName}.png not found (${res.status})`);
+        const blob = await res.blob();
+        const file = new File([blob], `${basepalName}.png`, { type: 'image/png' });
+        await loadFile(file);
+      } catch (err) {
+        const st = ge('load-st');
+        st.textContent = 'Error: ' + err.message;
+      }
+    }
+
+    function togglePalette() {
+      const wrap = ge('palette-wrapper');
+      const toggle = ge('pal-toggle');
+      const hidden = wrap.style.display === 'none';
+      wrap.style.display = hidden ? '' : 'none';
+      toggle.textContent = hidden ? '[hide ▴]' : '[show ▾]';
+    }
+
+    function renderPreview() {
+      if (!sprite) return;
+      const scale = parseInt(ge('scale-sel').value);
+      const { width, height, indices } = sprite;
+      const tmp = document.createElement('canvas');
+      tmp.width = width; tmp.height = height;
+      const ctx = tmp.getContext('2d');
+      const img = ctx.createImageData(width, height);
+      for (let i = 0; i < indices.length; i++) {
+        const c = palette[indices[i]] || [0, 0, 0, 0];
+        img.data[i * 4] = c[0]; img.data[i * 4 + 1] = c[1]; img.data[i * 4 + 2] = c[2]; img.data[i * 4 + 3] = c[3];
+      }
+      ctx.putImageData(img, 0, 0);
+      const cvs = ge('preview-canvas');
+      cvs.width = width * scale; cvs.height = height * scale;
+      const dctx = cvs.getContext('2d');
+      dctx.imageSmoothingEnabled = false;
+      dctx.drawImage(tmp, 0, 0, width * scale, height * scale);
+    }
+
+    ge('scale-sel').onchange = renderPreview;
+
+    function hexToRgb(hex) {
+      hex = hex.replace('#', '');
+      if (hex.length === 3) hex = hex.split('').map(c => c + c).join('');
+      const n = parseInt(hex, 16);
+      return [(n >> 16) & 255, (n >> 8) & 255, n & 255];
+    }
+    function rgbToHex(r, g, b) {
+      return '#' + [r, g, b].map(v => v.toString(16).padStart(2, '0')).join('');
+    }
+
+    function syncshit() {
+      if (selIdx < 0) return;
+      const c = palette[selIdx];
+      const hex = rgbToHex(c[0], c[1], c[2]);
+      ge('redslider').value = ge('rn').value = c[0];
+      ge('greenslider').value = ge('gn').value = c[1];
+      ge('blueslider').value = ge('bn').value = c[2];
+      ge('alphaslider').value = ge('an').value = c[3];
+      ge('cprev').style.background = `rgba(${c[0]},${c[1]},${c[2]},${c[3] / 255})`;
+      refreshSwatch(selIdx);
+    }
+
+    function refreshSwatch(i) {
+      const c = palette[i];
+      const el = document.querySelector(`.paletteswatch[data-i="${i}"]`);
+      if (el) el.style.background = `rgba(${c[0]},${c[1]},${c[2]},${c[3] / 255})`;
+    }
+
+    function onColorChanged() {
+      if (selIdx < 0) return;
+      const c = palette[selIdx];
+      ge('cprev').style.background = `rgba(${c[0]},${c[1]},${c[2]},${c[3] / 255})`;
+      ge('hexin').value = rgbToHex(c[0], c[1], c[2]);
+      refreshSwatch(selIdx);
+      renderPreview();
+    }
+
+    channels.forEach(({ slider, number, index }) => {
+      ge(slider).oninput = e => {
+        ge(number).value = e.target.value;
+        palette[selIdx][index] = Number(e.target.value);
+        onColorChanged();
+      };
+      ge(number).oninput = e => {
+        const clamped = Math.min(255, Math.max(0, Number(e.target.value)));
+        ge(slider).value = clamped;
+        palette[selIdx][index] = clamped;
+        onColorChanged();
+      };
+    });
+
+    ge('hexin').oninput = e => {
+      if (!/^#[0-9a-fA-F]{6}$/.test(e.target.value)) return;
+      const [r, g, b] = hexToRgb(e.target.value);
+      ge('redslider').value = ge('rn').value = r;
+      ge('greenslider').value = ge('gn').value = g;
+      ge('blueslider').value = ge('bn').value = b;
+      palette[selIdx][0] = r;
+      palette[selIdx][1] = g;
+      palette[selIdx][2] = b;
+      onColorChanged();
+    };
+
+    function buildGrid() {
+      const grid = ge('palette-grid');
+      grid.innerHTML = '';
+      palette.forEach((c, i) => {
+        const div = document.createElement('div');
+        div.className = 'paletteswatch'; div.dataset.i = i;
+        div.style.background = `rgba(${c[0]},${c[1]},${c[2]},${c[3] / 255})`;
+        div.title = `#${i}  rgb(${c[0]},${c[1]},${c[2]})  a=${c[3]}`;
+        div.onclick = () => {
+          document.querySelectorAll('.paletteswatch').forEach(s => s.classList.remove('sel'));
+          div.classList.add('sel');
+          selIdx = i;
+          ge('ed-panel').style.display = '';
+          syncshit();
+        };
+        grid.appendChild(div);
+      });
+      ge('pal-toggle').textContent = `[show ▾]`;
+    }
+
+    async function loadFile(file) {
+      const st = ge('load-st');
+      st.textContent = 'Parsing PNG…';
+      try {
+        const buf = await file.arrayBuffer();
+        const img = UPNG.decode(buf);
+
+        if (!img.tabs.PLTE) {
+          throw new Error('Incorrect palette type');
+        }
+
+        const rawPlte = img.tabs.PLTE;
+        const rawTrns = img.tabs.tRNS || [];
+
+        palette.length = 0;
+        for (let i = 0; i < rawPlte.length; i += 3) {
+          const palIdx = i / 3;
+          const r = rawPlte[i];
+          const g = rawPlte[i + 1];
+          const b = rawPlte[i + 2];
+          const a = rawTrns[palIdx] !== undefined ? rawTrns[palIdx] : 255;
+          palette.push([r, g, b, a]);
+        }
+
+        while (palette.length < 256) palette.push([0, 0, 0, 255]);
+
+        sprite = {
+          width: img.width,
+          height: img.height,
+          indices: new Uint8Array(img.data)
+        };
+
+        buildGrid();
+        ge('pal-panel').style.display = '';
+        ge('ed-panel').style.display = '';
+        ge('exp-panel').style.display = '';
+        ge('no-prev-msg').style.display = 'none';
+        ge('prev-ctrl').style.display = '';
+        renderPreview();
+        st.textContent = `Loaded ${file.name}`;
+
+      } catch (err) {
+        st.textContent = 'Error: ' + err.message;
+      }
+    }
+
+    ge('downloadHpl').onclick = () => {
+      if (!palette.length) return;
+
+      const buf = new ArrayBuffer(32 + 256 * 4);
+      const v = new DataView(buf);
+
+      v.setUint8(0, 0x48); v.setUint8(1, 0x50); v.setUint8(2, 0x41); v.setUint8(3, 0x4C);
+      v.setUint32(4, 0x00000125, true);
+      v.setUint32(8, 1056, true);
+      v.setUint32(12, 256, true);
+      v.setUint32(16, 0, true);
+      v.setUint32(20, 0, true);
+      v.setUint32(24, 0x10000001, true);
+      v.setUint32(28, 0, true);
+      for (let i = 0; i < 256; i++) {
+        const c = palette[i] || [0, 0, 0, 255];
+        const o = 32 + i * 4;
+        v.setUint8(o, c[2]);
+        v.setUint8(o + 1, c[1]);
+        v.setUint8(o + 2, c[0]);
+        v.setUint8(o + 3, c[3]);
+      }
+
+      dlBlob(buf, 'byeoonpalettemaker.hpl', 'application/octet-stream');
+      const st = ge('exp-st');
+      st.textContent = 'Downloaded successfully!';
+    };
+
+    ge('downloadPng').onclick = () => {
+      const cvs = ge('wc'); cvs.width = 16; cvs.height = 16;
+      const ctx = cvs.getContext('2d');
+      palette.forEach((c, i) => {
+        ctx.fillStyle = `rgba(${c[0]},${c[1]},${c[2]},${c[3] / 255})`;
+        ctx.fillRect(i % 16, Math.floor(i / 16), 1, 1);
+      });
+      cvs.toBlob(blob => {
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a'); a.href = url; a.download = 'palette_swatch.png'; a.click();
+        URL.revokeObjectURL(url);
+      });
+    };
+
+    ge('resetPalette').onclick = () => {
+      palette.length = 0; selIdx = -1; sprite = null;
+      ge('pal-panel').style.display = 'none';
+      ge('ed-panel').style.display = 'none';
+      ge('exp-panel').style.display = 'none';
+      ge('no-prev-msg').style.display = '';
+      ge('prev-ctrl').style.display = 'none';
+      ge('load-st').textContent = '';
+      ge('palette-wrapper').style.display = 'none';
+      ge('pal-toggle').textContent = '[show ▾]';
+    };
+
+    function dlBlob(data, name, type) {
+      const blob = new Blob([data], { type });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a'); a.href = url; a.download = name; a.click();
+      URL.revokeObjectURL(url);
+    }
+  </script>
+</body>
+
+</html>
