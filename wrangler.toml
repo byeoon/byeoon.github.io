@@ -1,0 +1,15 @@
+name = "byeoonpage"
+main = "index.js"
+compatibility_date = "2026-08-01"
+
+routes = [
+  { pattern = "byeoon.dev", custom_domain = true }
+]
+
+[assets]
+directory = "./"
+binding = "ASSETS"
+
+[[kv_namespaces]]
+binding = "COUNTER"
+id = "6a598e007a154a808194fe93a15f24f2"
