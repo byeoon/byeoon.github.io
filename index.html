@@ -17,17 +17,20 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"
     integrity="sha512-Kef5sc7gfTacR7TZKelcrRs15ipf7+t+n7Zh6mKNJbmW+/RRdCW9nwfLn4YX0s2nO6Kv5Y2ChqgIakaC6PW09A=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="assets/lanyard.js" defer></script>
 </head>
 
 <body>
   <div id="particles-js"></div>
+  <div class="side-column" id="right-side-column">
+    <!-- once i add tools n shit ill add more here -->
+  </div>
   <div class="nav">
     <img src="https://avatars.githubusercontent.com/u/47872200?s=400&u=1bf4273db0f4d3910799f6f5064a2271c96547ef&v=4"
       width="64" height="64" style="padding: 12px; border-radius: 32px;" />
-    <h1> <a href="./">byeoon</a> <span style="font-size: 20px; color: #ccc">@ byeoon.dev</span> |
+    <h1> <a href="./">byeoon</a> |
       <span style="font-size: 20px;"><a href="/photos.html">photos</a></span>
       <span style="font-size: 20px;"><a href="/portfolio.html">portfolio</a></span>
-      <span style="font-size: 20px;"><a href="/travel.html">travel</a></span>
     </h1>
   </div>
   <div class="sep"> </div>
@@ -38,24 +41,24 @@
       style="color: #fff;">Unless you want to see my old website.</a> Want to learn more about me? Keep reading.</p>
 
   <h3>About Me</h3>
-  <p>Well, my favorite hobby is messing around with computers and doing anything <span
-      class="wave-text">programming</span>
+  <p>My favorite hobby is messing around with computers and doing anything <span class="wave-text">programming</span>
     related. I've been programming since I was 10 years old and tinkering with PCs as young as 3. My second biggest
-    passion (and goal in life) is to try to travel the world.
+    passion and goal in life is to travel the world.
     You may have figured that out from <span class="no-blur" style="color: #ffffff; font-weight: bold; cursor: pointer;"
-      title="Amsterdam, The Netherlands">the background
-      image that I'm using right now</span>. My future travel goals are to visit 🇮🇹,🇵🇱,🇩🇪 & more!
+      title="Amsterdam Centraal, Netherlands">the background
+      image that I'm using right now</span>. I've visited 🇨🇦, 🇳🇱, 🇩🇪, and more soon!
   </p>
   <p>If you're still reading and want to know more... my favorite food of all time is ravioli, my favorite drink
-    is Dr. Pepper, my favorite game of all time is Cyberpunk 2077, and my favorite color is blue.</p>
+    is Dr. Pepper, and my favorite game of all time is Cyberpunk 2077.</p>
   <h3>Main Projects</h3>
-  <div style="font-size: 15px;">
-    <p style="margin: 4px;">
-      <a href="https://github.com/byeoon/MyShare">MyShare</a> - A self deployable file, image, and text sharing service.
-      <i class="devicon-html5-plain-wordmark colored"></i>
-      <i class="devicon-javascript-plain colored"></i>
+  <div style="font-size: 17px;">
+    <p style="margin: 4px;"> <a href="https://github.com/byeoon/MyShare">MyShare</a> - An easily deployable file, image,
+      and text sharing
+      service.
+      <i class="devicon-svelte-plain colored"></i>
+      <i class="devicon-docker-plain colored"></i>
+      <i class="devicon-express-original colored"></i>
       <i class="devicon-mariadb-original colored"></i>
-      <i class="devicon-nodejs-plain-wordmark colored"></i>
     </p>
     <p style="margin: 4px;">
       <a href="https://byeoon.dev/bbcfpalettemaker.html">BBCF Palette Maker</a> - BlazBlue CentralFiction custom palette
@@ -69,12 +72,12 @@
       <i class="devicon-typescript-plain colored"></i>
       <i class="devicon-reactnative-original-wordmark colored"></i>
     </p>
+    <h4>Other Projects & Contributions</h4>
     <p style="margin: 4px;">
       <a href="https://github.com/byeoon/HierarchyRenamer">HierarchyRenamer</a> - VCC plugin that mass renames items in
       a hierarchy to make rigging bones easier.
       <i class="devicon-csharp-plain colored"></i>
       <i class="devicon-unity-plain colored"></i>
-
     </p>
     <p style="margin: 4px;">
       <a href="https://github.com/byeoon/EmotesPlus">EmotesPlus</a>,
@@ -83,8 +86,6 @@
       client modification.
       <i class="devicon-typescript-plain colored"></i>
     </p>
-
-    <h4>Highlighted Contributions</h4>
     <p style="margin: 4px;">
       <a href="https://github.com/Vendicated/Vencord">Vencord</a> - Contributed CopyStickerLinks and more fixes
       <i class="devicon-typescript-plain colored"></i>
@@ -110,10 +111,45 @@
 
   <h3>Contact Me</h3>
   <p>In case you want to contact me, here are the socials you can find me on.</p>
-  <p class="subtitle">Discord: <span class="codeblock">@byeoon</span></p>
+  <details>
+    <summary class="subtitle">Discord: <span class="codeblock">@byeoon</span> (Click to see status)</summary>
+    <div id="lanyard-status-card" class="lanyard-card">
+      <div class="lanyard-header">
+        <span class="status-badge status-badge-offline"></span>
+        <span class="status-title">Loading status...</span>
+      </div>
+    </div>
+  </details>
+
   <p class="subtitle">Email: <span class="codeblock"><a href="mailto:byeoon@byeoon.dev">byeoon@byeoon.dev</a></span></p>
   <p class="subtitle">GitHub: <span class="codeblock"><a href="https://github.com/byeoon">byeoon</a></span></p>
   <p class="subtitle">Osmium: <span class="codeblock"><a href="https://osm.pm/blue">blue</a></span></p>
+
+  <div
+    style="display: flex; align-items: center; justify-content: space-between; max-width: 350px; margin-top: 16px; margin-bottom: 8px;">
+    <h4 style="margin: 0;">Leave a Message</h4>
+    <div id="discord-auth-container">
+      <button type="button" id="discord-login-btn" class="rect"
+        style="width: auto; padding: 4px 10px; font-size: 12px;">
+        Authenticate with Discord
+      </button>
+      <div id="discord-user-profile" class="discord-user-profile" style="display: none;">
+        <img id="discord-user-avatar" class="discord-user-avatar" src="" alt="Avatar" />
+        <div class="discord-user-info">
+          <span id="discord-user-name" class="discord-user-name"></span>
+          <a href="#" id="discord-logout-btn" class="discord-logout-btn">Logout</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <form id="contact-form" style="display: flex; flex-direction: column; gap: 8px; max-width: 350px;">
+    <textarea id="sender-message" placeholder="type a message..." rows="1" required class="sender-message"></textarea>
+    <button type="submit" id="send-btn" class="rect">
+      Send!!!
+    </button>
+    <div id="form-status" style="font-size: 13px; margin-top: 4px; display: none;"></div>
+  </form>
 
   <h3>frien buttons</h3>
   <p> It's not a complete website without some buttons. You can even add me on your own website! ->
@@ -123,6 +159,11 @@
       <img src="img/button.png" height="31" width="88" title="byeoon!">
       <a href=""><img src="https://uwu.gal/static/images/friends/seele.png" width="88" height="31" loading="lazy"
           style="image-rendering: pixelated;" title="my cute and awesome girlfriend i love her"></a>
+
+      <a href="https://fraud-labs.pages.dev" target="_blank">
+        <img src="https://fraud-labs.pages.dev/button.png" alt="Fraudulent Labs" height="31" width="88" />
+      </a>
+
       <!-- omg seele ily -->
       <a href="https://uwu.gal/about-us"><img src="https://uwu.gal/button.png" width="88" height="31" /></a>
       <a href="https://pawing.party/"><img src="https://files.catbox.moe/xfndv3.png" width="88" height="31"
@@ -145,17 +186,22 @@
           style="image-rendering: pixelated;"></a>
       <a href="https://imrock.dev"><img src="https://imrock.dev/assets/8831.png" width="88" height="31" loading="lazy"
           style="image-rendering: pixelated;"></a>
+      <a href="https://snek.dev/"><img src="https://snek.dev/88x31.png" width="88" height="31" loading="lazy"
+          style="image-rendering: pixelated;"></a>
       <img src="img/megubutton.png" width="88" height="31" loading="lazy" title="im rieing all over">
       <a href="https://paige.moe/" style="width: 88px; height: 31px;">
         <img src="https://paige.moe/88x31.gif" width="88" height="31" style="image-rendering:pixelated" />
       </a>
-      <br>
+      <script src="https://the.inner-circle.fyi/ring/ring.js"></script>
+      <br><br>
+
       <div class="sep"></div>
       <br>
+
       <script>
         function copyMyButton() {
           navigator.clipboard.writeText("https://byeoon.dev/img/button.png");
-          alert("copied, now add it to ur website!!!!!!!!!");
+          alert("copied, now add it to ur website!!!!!!!!!!");
         }
         particlesJS.load('particles-js', 'assets/particles.json', function () {
           console.log('callback - particles.js config loaded');
@@ -172,6 +218,139 @@
             console.error('Failed to load visitor count:', err);
             document.getElementById('visitor-count').textContent = 'offline';
           });
+
+        const DISCORD_CLIENT_ID = "1540755097078734868";
+        let currentDiscordToken = null;
+
+        function checkDiscordAuth() {
+          const hash = window.location.hash;
+          if (hash.includes("access_token=")) {
+            const params = new URLSearchParams(hash.substring(1));
+            const token = params.get("access_token");
+            if (token) {
+              localStorage.setItem("discord_token", token);
+              history.replaceState(null, "", window.location.pathname);
+            }
+          }
+
+          const savedToken = localStorage.getItem("discord_token");
+          if (savedToken) {
+            fetchDiscordUser(savedToken);
+          } else {
+            showLoggedOut();
+          }
+        }
+
+        async function fetchDiscordUser(token) {
+          try {
+            const res = await fetch("https://discord.com/api/v10/users/@me", {
+              headers: { Authorization: `Bearer ${token}` }
+            });
+            if (!res.ok) throw new Error("Invalid token");
+
+            const user = await res.json();
+            currentDiscordToken = token;
+
+            const avatarUrl = user.avatar
+              ? `https://cdn.discordapp.com/avatars/${user.id}/${user.avatar}.png?size=64`
+              : "https://cdn.discordapp.com/embed/avatars/0.png";
+
+            document.getElementById("discord-user-avatar").src = avatarUrl;
+            document.getElementById("discord-user-name").textContent = `@${user.username}`;
+            document.getElementById("discord-login-btn").style.display = "none";
+            document.getElementById("discord-user-profile").style.display = "flex";
+          } catch (err) {
+            console.error("Discord auth error:", err);
+            localStorage.removeItem("discord_token");
+            showLoggedOut();
+          }
+        }
+
+        function showLoggedOut() {
+          currentDiscordToken = null;
+          document.getElementById("discord-login-btn").style.display = "inline-flex";
+          document.getElementById("discord-user-profile").style.display = "none";
+        }
+
+        const loginBtn = document.getElementById("discord-login-btn");
+        if (loginBtn) {
+          loginBtn.addEventListener("click", () => {
+            const redirectUri = encodeURIComponent(window.location.origin + window.location.pathname);
+            const authUrl = `https://discord.com/oauth2/authorize?client_id=${DISCORD_CLIENT_ID}&redirect_uri=${redirectUri}&response_type=token&scope=identify`;
+            window.location.href = authUrl;
+          });
+        }
+
+        const logoutBtn = document.getElementById("discord-logout-btn");
+        if (logoutBtn) {
+          logoutBtn.addEventListener("click", (e) => {
+            e.preventDefault();
+            localStorage.removeItem("discord_token");
+            showLoggedOut();
+          });
+        }
+
+        checkDiscordAuth();
+
+        const contactForm = document.getElementById('contact-form');
+        if (contactForm) {
+          contactForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const btn = document.getElementById('send-btn');
+            const status = document.getElementById('form-status');
+            const message = document.getElementById('sender-message').value.trim();
+
+            if (!currentDiscordToken) {
+              status.style.display = 'block';
+              status.style.color = '#f56565';
+              status.textContent = 'You have to authenticate with Discord before sending a message';
+              return;
+            }
+
+            if (!message) return;
+
+            btn.disabled = true;
+            btn.textContent = 'Sending...';
+            status.style.display = 'block';
+            status.style.color = '#ccc';
+            status.textContent = 'Sending!!!';
+
+            try {
+              const res = await fetch('/api/message', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ access_token: currentDiscordToken, message })
+              });
+
+              const data = await res.json();
+              if (res.ok && data.success) {
+                status.style.color = '#48bb78';
+                status.textContent = 'Sent! Thank you 💖';
+                document.getElementById('sender-message').value = '';
+              } else {
+                throw new Error(data.error || 'Failed to send message.');
+              }
+            } catch (err) {
+              status.style.color = '#f56565';
+              status.textContent = err.message || 'Something went wrong :(, please try again..';
+            } finally {
+              btn.disabled = false;
+              btn.textContent = 'Send!!';
+            }
+          });
+        }
+
+        window.addEventListener('mousemove', (e) => {
+          const moveX = (e.clientX - window.innerWidth / 2) * 0.02;
+          const moveY = (e.clientY - window.innerHeight / 2) * 0.02;
+          document.body.style.setProperty('--mouse-x', `${moveX}px`);
+          document.body.style.setProperty('--mouse-y', `${moveY}px`);
+        });
+
+        window.addEventListener('scroll', () => {
+          const scrollY = window.scrollY * 0.15;
+          document.body.style.setProperty('--scroll-y', `${scrollY}px`);
+        });
       </script>
 </body>
 

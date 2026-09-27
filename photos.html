@@ -17,7 +17,7 @@
     <div class="nav">
         <img src="https://avatars.githubusercontent.com/u/47872200?s=400&u=1bf4273db0f4d3910799f6f5064a2271c96547ef&v=4"
             width="64" height="64" style="padding: 12px; border-radius: 32px;" />
-        <h1><a href="./">byeoon</a> <span style="font-size: 20px; color: #ccc">@ byeoon.dev</span> |
+        <h1><a href="./">byeoon</a> |
             <span style="font-size: 20px;"><a href="/photos.html">photos</a></span>
             <span style="font-size: 20px;"><a href="/portfolio.html">portfolio</a></span>
         </h1>
@@ -25,12 +25,11 @@
     </div>
     <div class="sep"> </div>
     <div class="modal">
-      <img src="" id="imagemodal" height="700">
+        <img src="" id="imagemodal" height="700">
     </div>
     <h2>Photos</h2>
-    <p>A collection of pictures I've taken. I lost a lot of them when I
-        traded in my iPhone, so I guess this will grow over
-        time. Click on the images to zoom them in further!</p>
+    <p>A collection of pictures I've taken, this will expand the more I travel. Click on the images to zoom
+        them in further!</p>
     <br>
     <div class="photos">
         <div class="imagecontainer">
@@ -56,8 +55,13 @@
             </p>
         </div>
         <div class="imagecontainer">
-            <img src="./img/NewYork2.jpg" width="256" height="256" />
-            <p class="description">"Gazing into the distant valleys & sea "<br>📍 🇺🇸
+            <img src="./img/Germany1.jpg" width="256" height="256" />
+            <p class="description">"Beautiful castle in Munich City Centre"<br>📍 🇩🇪
+            </p>
+        </div>
+        <div class="imagecontainer">
+            <img src="./img/Netherlands4.jpg" width="256" height="256" />
+            <p class="description">"Iconic dutch canal housing"<br>📍 🇳🇱
             </p>
         </div>
     </div>
@@ -67,4 +71,18 @@
 <script>
     const imageModal = document.getElementById("imagemodal");
     const modal = document.querySelector(".modal");
+    particlesJS.load('particles-js', 'assets/particles.json', function () {
+        console.log('callback - particles.js config loaded');
+    });
+    window.addEventListener('mousemove', (e) => {
+        const moveX = (e.clientX - window.innerWidth / 2) * 0.02;
+        const moveY = (e.clientY - window.innerHeight / 2) * 0.02;
+        document.body.style.setProperty('--mouse-x', `${moveX}px`);
+        document.body.style.setProperty('--mouse-y', `${moveY}px`);
+    });
+
+    window.addEventListener('scroll', () => {
+        const scrollY = window.scrollY * 0.15;
+        document.body.style.setProperty('--scroll-y', `${scrollY}px`);
+    });
 </script>

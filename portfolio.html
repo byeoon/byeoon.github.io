@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-<!-- fuck visual studio code for fucking up the indentation so this looks weird -->
 
 <head>
   <meta charset="UTF-8">
@@ -18,16 +17,35 @@
   <div class="nav">
     <img src="https://avatars.githubusercontent.com/u/47872200?s=400&u=1bf4273db0f4d3910799f6f5064a2271c96547ef&v=4"
       width="64" height="64" style="padding: 12px; border-radius: 32px;" />
-    <h1> <a href="./">byeoon</a> <span style="font-size: 20px; color: #ccc">@ byeoon.dev</span> |
+    <h1> <a href="./">byeoon</a> |
       <span style="font-size: 20px;"><a href="/photos.html">photos</a></span>
       <span style="font-size: 20px;"><a href="/portfolio.html">portfolio</a></span>
     </h1>
   </div>
   <div class="sep"> </div>
 
-  <h2>Portfolio</h2>
-  <p>I am still growing my portfolio and sorting through my work, there will be stuff here added soon.
-  </p> 
+  <h1>Portfolio</h1>
+  <p>I am still growing my portfolio and sorting through my work, there will be stuff here added soon. </p>
+  <div style="display: flex; gap: 8px; align-items: center;">
+    <img src="https://myshare.pre1ude.dev/img/myshare_white.png" width="64" height="64"></img>
+    <h2>MyShare (2024 - Current)</h2>
+  </div>
+  <p>MyShare is a universal clipboard service designed for seamless file, note, and media sharing across devices.</p>
 </body>
 
 </html>
+<script>
+  particlesJS.load('particles-js', 'assets/particles.json', function () {
+  });
+  window.addEventListener('mousemove', (e) => {
+    const moveX = (e.clientX - window.innerWidth / 2) * 0.02;
+    const moveY = (e.clientY - window.innerHeight / 2) * 0.02;
+    document.body.style.setProperty('--mouse-x', `${moveX}px`);
+    document.body.style.setProperty('--mouse-y', `${moveY}px`);
+  });
+
+  window.addEventListener('scroll', () => {
+    const scrollY = window.scrollY * 0.15;
+    document.body.style.setProperty('--scroll-y', `${scrollY}px`);
+  });
+</script>

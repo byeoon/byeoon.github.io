@@ -1,3 +1,8 @@
 .wrangler/
+functions/
+assets/lanyard.js
 node_modules/
 .env
+index.js
+index.js
+/index.js
